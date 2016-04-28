@@ -35,8 +35,15 @@ var tip = d3.tip()
 
 svg.call(tip);
 
-d3.json("data/neighborhoods_json.json", function(error, data) {
-    console.log(data.features)
+
+queue()
+    .defer(d3.json, "data/neighborhoods_json.json")
+    .defer(d3.json, "data/d3_boston311.json")
+    .await(function(error, data, clusters) {
+
+//d3.json("data/neighborhoods_json.json", function(error, data) {
+//    console.log(data.features)
+//    console.log(clusters)
 
     g.selectAll( "path" )
         .data( data.features )
@@ -56,6 +63,29 @@ d3.json("data/neighborhoods_json.json", function(error, data) {
             tip.hide()
 
         });
+
+        //console.log(data.features)
+
+
+        g.selectAll("circle")
+            .data(clusters)
+            .enter()
+            .append("circle")
+            .attr("cx", function(d) {
+                return albersProjection([d.longitude, d.latitude])[0];
+            })
+            .attr("cy", function(d) {
+                return albersProjection([d.longitude, d.latitude])[1];
+            })
+            .attr("r", 5)
+            .style("fill", function(d){
+                if(d.cluster==0){
+                    return "blue"
+                }else{
+                    return "red"
+                }
+            })
+            .style("opacity",0.5);
 
 })
 
