@@ -13,8 +13,44 @@
 </head>
 <body>
 
+<h1>311 Boston Service Requests</h1>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+
+<!-- Select box to choose the selection criteria -->
+<form class="form-inline">
+	<div class="form-group">
+		<label for="rankingType">Feature</label>
+		<select class="form-control" id="ranking-type">
+			<option value="TYPE">Type</option>
+			<option value="REASON">Reason</option>
+			<option value="SUBJECT">Subject</option>
+			<option value="Department">Department</option>
+
+		</select>
+
+
+		<!-- Activity IV -->
+		<!--<button type="button" class="btn btn-link" id="change-sorting"><i class="glyphicon glyphicon-sort"></i> Sort</button>-->
+	</div>
+</form>
+</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+
+		<div id="map2"></div>
+			</div>
+		<div class="col-md-6">
 
 <div id="map"></div>
+			</div>
+			</div>
+		</div>
+
 	<!-- Load JS libraries: jQuery, bootstrap, D3 -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -30,6 +66,8 @@
 
 	<!-- Scatterplot implementation -->
 	<script src="js/main.js"></script>
+	<script src="js/main2.js"></script>
+
 
 </body>
 </html>
