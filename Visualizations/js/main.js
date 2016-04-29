@@ -38,7 +38,7 @@ svg.call(tip);
 
 queue()
     .defer(d3.json, "data/neighborhoods_json.json")
-    .defer(d3.json, "data/d3_boston311.json")
+    .defer(d3.json, "data/d3_boston311_3K.json") //d3_boston311
     .await(function(error, data, clusters) {
 
 //d3.json("data/neighborhoods_json.json", function(error, data) {
