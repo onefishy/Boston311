@@ -269,7 +269,7 @@
       %\includegraphics[width=0.30\linewidth]{311_logo}
  }
  % Title
- {\sc\Huge Boston 311}
+ {\sc\Huge Analyzing Boston 311 Requests Using Gaussian Mixture Models}
  % Authors
  {Jane Huang, Isadora Nun, Weiwei Pan and Francisco Rivera\\[1em]
 % {\texttt{Brian.Amberg@unibas.ch, ab@microsoft.com, Thomas.Vetter@unibas.ch}}
@@ -295,11 +295,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Introduction: }{name=contribution,column=0,row=0,span=2}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  Inverse compositional image alignment (ICIA) is fast, but not reliable. We
-  explain ICIA from a different perspective which leads naturally to two new
-  algorithms with a better capture range and comparable speed.
-  \includegraphics[width=0.495\textwidth, height=0.30\textheight]{2015_intensity_surface}
-  \includegraphics[width=0.495\textwidth, height=0.30\textheight]{2015_response_time_surface}
+We want to compare the patterns in 311 requests and responses originating from constituent calls and the new Citizens Connect App. 
+  \begin{center}
+  \includegraphics[width=0.48\textwidth, height=0.23\textheight]{Intensity_call}
+  \includegraphics[width=0.48\textwidth, height=0.23\textheight]{Intensity_app}
+  \end{center}
   }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{The Model}{name=abstract,column=0,below=contribution}{
@@ -312,108 +312,20 @@
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \headerbox{Latent Classes in 311 Data}{name=speed,column=2,row=0,span=2}{
+   \headerbox{Latent Clusters in 311 Data}{name=speed,column=2,row=0,span=2}{
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \newlength{\MSZ}
-   \setlength{\MSZ}{0.01\textwidth}
-   \newcommand{\MarkerCircle}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1]             circle(\MSZ);}}
-   \newcommand{\MarkerRectangle}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1]             (-\MSZ,-\MSZ) rectangle +(2\MSZ,2\MSZ);}}
-   \newcommand{\MarkerDiamond}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1,rotate=45]   rectangle +(2\MSZ,2\MSZ);}}
-   \newcommand{\MarkerTriangle}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1]             (-0.866\MSZ,-0.5\MSZ) -- (0\MSZ,1\MSZ) -- (0.866\MSZ,-0.5\MSZ) -- cycle ;}}
-   \newcommand{\MarkerUDTriangle}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1,rotate=180]  (-0.866\MSZ,-0.5\MSZ) -- (0\MSZ,1\MSZ) -- (0.866\MSZ,-0.5\MSZ) -- cycle ;}}
-   \newcommand{\MarkerPlus}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1]         (-\MSZ,-0.25\MSZ) rectangle +(2\MSZ,0.5\MSZ) (-0.25\MSZ,-\MSZ) rectangle +(0.5\MSZ,2\MSZ);}}
-   \newcommand{\MarkerX}[1]{%
-     \tikz{\draw[use as bounding box] (0,0); \draw[fill=#1,rotate=45]         (-\MSZ,-0.25\MSZ) rectangle +(2\MSZ,0.5\MSZ) (-0.25\MSZ,-\MSZ) rectangle +(0.5\MSZ,2\MSZ);}}
-   \begin{tikzpicture}[x=0.00425\linewidth,y=13mm,font=\smaller]
-     % Ticks
-     \begin{scope}[color=black]
-       \foreach \y in {-0.2218487496,-0.1549019600,-0.0969100130,-0.0457574906,0.0000000000,
-                       0.0000000000,0.3010299957,0.4771212547,0.6020599913,0.6989700043,0.7781512504,0.8450980400,0.9030899870,0.9542425094,1.0000000000,
-                       1.0000000000,1.3010299957,1.4771212547,1.6020599913,1.6989700043,1.7781512504,1.8450980400,1.9030899870,1.9542425094,2.0000000000,
-                       2.0000000000,2.3010299957,2.4771212547,2.6020599913,2.6989700043,2.7781512504,2.8450980400,2.9030899870,2.9542425094,3.0000000000} {
-         \draw[color=lightgray!20!white] (0,\y) -- +(100,0); 
-       }
-       \foreach \y/\lbl in {0/$10^0$,1/$10^1$,2/$10^2$,3/$10^3$} {
-         \draw[color=black]     (0,\y) node[anchor=east,color=black] {\lbl} -- +(100,0); 
-         \draw[color=lightgray] (0,\y) -- +(100,0); 
-         \draw[color=black]     (0,\y) -- +(0.5\MSZ,0mm); 
-       }
-       \foreach \x in {0,20,40,60,80,100} {
-         \draw (\x,-0.23) node[anchor=north,color=black] {\x};
-         \draw[color=lightgray] (\x,-0.23) -- +(0,3.23);
-         \draw[color=black] (\x,-0.23) -- +(0mm,0.5\MSZ);
-       }
-     \end{scope}
-     % Border
-     \draw[color=black] (0,3) -- (0,-0.23)  (100,-0.23) -- (100,3);
-     % Axis labels
-     \draw (50,-0.23)  node[below,yshift=-1em]{Success Rate (\%, Larger is better)};
-     \draw (0,1.5) node[above,rotate=90,yshift=1.6em]{Runtime (smaller is better)};
-     \draw (50,3)  node[above]{The main algorithms starting within $20\%$ \ied{}};
-     % Data
-     \foreach \anch/\rot/\xs/\ys/\x/\y/\ttl/\stl in {
-     west/  0  / 1   / 0   /  5.2631578947   /     0.0000000000 /  Original \ICIA{}        / {\MarkerCircle{blue}},
-   %  west/  0  / 1   / 0   / 14.2369727047   /     0.1128364125 /  \ICIA{} + V^{\text{norm}}/ {\MarkerCircle{blue!70!white}},
-     east/  0  /-1   / 0   / 38.9423076923   /     0.8814699511 /  \CoLiNe{}                / {\MarkerRectangle{green}},
-     west/  0  / 1   / 0   / 39.4696029777   /     0.2610806897 /  \LinCoDe{}               / {\MarkerTriangle{red}},
-     west/  0  / 1   / 0   / 56.8548387097   /     0.9091243545 /  \CoDe{}                  / {\MarkerUDTriangle{yellow}},
-     west/  0  / 1   / 0   / 36.4299007444   /     1.3563671940 /  \CoNe{}                  / {\MarkerX{black!50!white}},
-     west/  0  / 1   / 0   / 41.6918429003   /     2.6132022326 /  L-BFGS (with reg)     / {\MarkerPlus{red!50!blue!50!black}}
-     }{
-       \draw (\x,\y) 
-         node[fill=none,anchor=\anch,xshift=\xs\MSZ,yshift=\ys\MSZ,rotate=\rot] {\ttl} 
-         node{\stl};
-       \draw[fill=black] (\x,\y) circle(0.3\MSZ);
-     }
-   \end{tikzpicture}
-   \begin{tikzpicture}[x=0.00425\linewidth,y=13mm,font=\smaller]
-     % Ticks
-     \begin{scope}[color=black]
-       \foreach \y in {-0.2218487496,-0.1549019600,-0.0969100130,-0.0457574906,0.0000000000,
-                       0.0000000000,0.3010299957,0.4771212547,0.6020599913,0.6989700043,0.7781512504,0.8450980400,0.9030899870,0.9542425094,1.0000000000,
-                       1.0000000000,1.3010299957,1.4771212547,1.6020599913,1.6989700043,1.7781512504,1.8450980400,1.9030899870,1.9542425094,2.0000000000,
-                       2.0000000000,2.3010299957,2.4771212547,2.6020599913,2.6989700043,2.7781512504,2.8450980400,2.9030899870,2.9542425094,3.0000000000} {
-         \draw[color=lightgray!20!white] (0,\y) -- +(100,0); 
-       }
-       \foreach \y/\lbl in {0/$10^0$,1/$10^1$,2/$10^2$,3/$10^3$} {
-         \draw[color=black]     (0,\y) node[anchor=east,color=black] {\lbl} -- +(100,0); 
-         \draw[color=lightgray] (0,\y) -- +(100,0); 
-         \draw[color=black]     (0,\y) -- +(0.5\MSZ,0mm); 
-       }
-       \foreach \x in {0,20,40,60,80,100} {
-         \draw (\x,-0.23) node[anchor=north,color=black] {\x};
-         \draw[color=lightgray] (\x,-0.23) -- +(0,3.23);
-         \draw[color=black] (\x,-0.23) -- +(0mm,0.5\MSZ);
-       }
-     \end{scope}
-     % Border
-     \draw[color=black] (0,3) -- (0,-0.23)  (100,-0.23) -- (100,3);
-     % Axis labels
-     \draw (50,-0.23)  node[below,yshift=-1em]{Success Rate (\%, Larger is better)};
-     \draw (0,1.5) node[above,rotate=90,yshift=1.6em]{Runtime (smaller is better)};
-     \draw (50,3)  node[above,text width=0.5\linewidth,text centered]{All algorithms with $V^{\text{norm}}$ and regularisation};
-
-     \foreach \anch/\rot/\xs/\ys/\x/\y/\ttl/\stl in {
-       south/0 / 0   /  1.0/       26.4701318852 /         0.6174735535 / \ICIA{} + $V^{\text{norm}}$ / {\MarkerCircle{    blue!50!black}},
-       south/0 / 0   /  1.0/       52.1334367727 /         1.0781366795 / \CoLiNe{}   / {\MarkerRectangle{ green!50!black}},
-       west/ 0 / 1   /  0  /       55.9348332040 /         0.5514820720 / \LinCoDe{}  / {\MarkerTriangle{  red!50!black}},
-       west/ 0 / 1   /  0  /       66.0356865787 /         1.1158139989 / \CoDe{}     / {\MarkerUDTriangle{yellow!50!black}},
-       west/ 0 / 1   /  0  /       66.9511249030 /         1.8260835334 / \CoNe{}     / {\MarkerX{         black!50!white!50!black}},
-       west/ 0 / 1   /  0  /       41.6918429003 /         2.6132022326 / L-BFGS   / {\MarkerPlus{      red!50!blue!50!black}}
-     }{
-       \draw (\x,\y) 
-         node[fill=none,anchor=\anch,xshift=\xs\MSZ,yshift=\ys\MSZ,rotate=\rot] {\ttl} 
-         node{\stl};
-       \draw[fill=black] (\x,\y) circle(0.3\MSZ);
-     }
-   \end{tikzpicture}
-
+ \begin{center}
+   \includegraphics[width=0.23\textwidth, height=0.15\textheight]{Call_3D}      
+   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{Call_2D}
+   \includegraphics[width=0.23\textwidth, height=0.15\textheight]{App_3D}   
+   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{App_2D}
+  \end{center}
+  \begin{center}
+   \includegraphics[width=0.23\textwidth, height=0.15\textheight]{Call_3D}      
+   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{Call_2D}
+   \includegraphics[width=0.23\textwidth, height=0.15\textheight]{App_3D}   
+   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{App_2D}
+  \end{center}
    \textbf{Fitting a multiperson AAM. }
    The best speed--performance tradeoffs come from the two new algorithms
    \CoDe{} and \LinCoDe{}. Note that \ICIA{} is practically useless on
@@ -427,71 +339,17 @@
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-   \headerbox{Visualization}{name=tracking,column=2,span=2,below=speed,above=bottom}{
+   \headerbox{Component Analysis}{name=tracking,column=2,span=2,below=speed,above=bottom}{
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  {
- \begin{tabular}{c@{\hspace{0.05em}}c@{\hspace{0.1em}}c@{\hspace{0.1em}}c@{\hspace{0.1em}}c@{\hspace{1em}}c@{\hspace{0.1em}}c@{\hspace{0.1em}}c@{\hspace{0.1em}}c@{\hspace{0.1em}}c}
-   \multicolumn{5}{c}{\smaller \ICIA{} with $\VLins$} &
-   \multicolumn{5}{c}{\smaller \ICIA{} with $\VLins$ + Regularisation}\\[-0.2em]
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_01}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_01}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_01}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_01}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_01}&
-   %
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_02}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_02}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_02}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_02}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_02}\\[-0.1em]
-   %
-   \multicolumn{5}{c}{\smaller \LinCoDe{}} &
-   \multicolumn{5}{c}{\smaller \LinCoDe{} + Regularisation}\\[-0.2em]
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_03}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_03}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_03}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_03}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_03}&
-   %
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_04}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_04}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_04}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_04}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_04}\\[-0.1em]
-   %
-   \multicolumn{5}{c}{\smaller \CoDe{}} &
-   \multicolumn{5}{c}{\smaller \CoDe{} + Regularisation}\\[-0.2em]
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_05}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_05}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_05}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_05}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_05}&
-   %
-   \includegraphics[width=0.095\linewidth]{track_frame_00010_06}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00050_06}&
-   \includegraphics[width=0.095\linewidth]{track_frame_00450_06}&
-   \includegraphics[width=0.095\linewidth]{track_frame_02000_06}&
-   \includegraphics[width=0.095\linewidth]{track_frame_04999_06}\\[-0.5em]
-   \smaller Frame 10 & \smaller Frame 50 & \smaller Frame 450 & \smaller Frame 2000 & \smaller Frame 5000 &
-   \smaller Frame 10 & \smaller Frame 50 & \smaller Frame 450 & \smaller Frame 2000 & \smaller Frame 5000
-   \end{tabular}
- }
 
+   }
 
-   {\textbf{Our algorithm makes fast and robust tracking possible.}
-     We compare face tracking under natural motion, using \ICIA{},
-     \LinCoDe{} and \CoDe{}. The original \ICIA{} fails
-     immediately with this large model and new face data. Substituting the orthonormal
-     incremental warp for the original \ICIA{} warp, the algorithm still loses track
-     very early, whereas \LinCoDe{} and \CoDe{} can track much
-     further. Finally, adding regularisation to all algorithms, \ICIA{} still
-     loses track completely after approximately 500 frames and does not recover
-     the local deformations accurately. In contrast \CoDe{} now tracks the full
-     5000 frame sequence without reinitialization, and \LinCoDe{} tracks for 2500 frames.}
-   
-   The same training dataset was used for both tracking experiments. The
-   training data was aquired with different camera and light settings from
-   different subjects.
+ \begin{center}
+   \includegraphics[width=0.45\textwidth, height=0.20\textheight]{App_cluster_profiles}
+   \includegraphics[width=0.45\textwidth, height=0.20\textheight]{Call_cluster_profiles}
+  \end{center}
+  
 
    }
 

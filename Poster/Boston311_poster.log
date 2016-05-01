@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  29 APR 2016 23:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 MAY 2016 19:15
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -822,21 +822,19 @@ File: images/bos_logo_sm.png Graphic file (type png)
 Package pdftex.def Info: images/bos_logo_sm.png used on input line 282.
 (pdftex.def)             Requested size: 80.85301pt x 80.85422pt.
 
-<images/2015_intensity_surface.png, id=22, 1284.8pt x 721.69624pt>
-File: images/2015_intensity_surface.png Graphic file (type png)
+<images/Intensity_call.png, id=22, 1163.34625pt x 682.55pt>
+File: images/Intensity_call.png Graphic file (type png)
 
-<use images/2015_intensity_surface.png>
-Package pdftex.def Info: images/2015_intensity_surface.png used on input line 3
-03.
-(pdftex.def)             Requested size: 231.62651pt x 202.13965pt.
+<use images/Intensity_call.png>
+Package pdftex.def Info: images/Intensity_call.png used on input line 303.
+(pdftex.def)             Requested size: 224.62383pt x 154.97313pt.
 
-<images/2015_response_time_surface.png, id=23, 1276.77pt x 720.6925pt>
-File: images/2015_response_time_surface.png Graphic file (type png)
+<images/Intensity_app.png, id=23, 1112.155pt x 667.49374pt>
+File: images/Intensity_app.png Graphic file (type png)
 
-<use images/2015_response_time_surface.png>
-Package pdftex.def Info: images/2015_response_time_surface.png used on input li
-ne 303.
-(pdftex.def)             Requested size: 231.63998pt x 202.14442pt.
+<use images/Intensity_app.png>
+Package pdftex.def Info: images/Intensity_app.png used on input line 303.
+(pdftex.def)             Requested size: 224.6162pt x 154.96661pt.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -850,274 +848,77 @@ Package pdftex.def Info: images/graph_model.png used on input line 310.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-\MSZ=\skip83
 
-Overfull \hbox (4.29756pt too wide) in paragraph at lines 426--426
-[][] [] 
- []
+<images/Call_3D.png, id=25, 681.54625pt x 587.19376pt>
+File: images/Call_3D.png Graphic file (type png)
 
+<use images/Call_3D.png>
+Package pdftex.def Info: images/Call_3D.png used on input line 338.
+(pdftex.def)             Requested size: 107.62488pt x 101.06703pt.
+ <images/Call_2D.png, id=26, 790.955pt x 662.475pt>
+File: images/Call_2D.png Graphic file (type png)
+
+<use images/Call_2D.png>
+Package pdftex.def Info: images/Call_2D.png used on input line 338.
+(pdftex.def)             Requested size: 116.98468pt x 107.80759pt.
+ <images/App_3D.png, id=27, 688.5725pt x 590.205pt>
+File: images/App_3D.png Graphic file (type png)
+
+<use images/App_3D.png>
+Package pdftex.def Info: images/App_3D.png used on input line 338.
+(pdftex.def)             Requested size: 107.63121pt x 101.06299pt.
+ <images/App_2D.png, id=28, 835.12pt x 636.3775pt>
+File: images/App_2D.png Graphic file (type png)
+
+<use images/App_2D.png>
+Package pdftex.def Info: images/App_2D.png used on input line 338.
+(pdftex.def)             Requested size: 116.99245pt x 107.80403pt.
+File: images/Call_3D.png Graphic file (type png)
+ <use images/Call_3D.png>
+Package pdftex.def Info: images/Call_3D.png used on input line 338.
+(pdftex.def)             Requested size: 107.62488pt x 101.06703pt.
+File: images/Call_2D.png Graphic file (type png)
+ <use images/Call_2D.png>
+Package pdftex.def Info: images/Call_2D.png used on input line 338.
+(pdftex.def)             Requested size: 116.98468pt x 107.80759pt.
+File: images/App_3D.png Graphic file (type png)
+
+<use images/App_3D.png>
+Package pdftex.def Info: images/App_3D.png used on input line 338.
+(pdftex.def)             Requested size: 107.63121pt x 101.06299pt.
+File: images/App_2D.png Graphic file (type png)
+ <use images/App_2D.png>
+Package pdftex.def Info: images/App_2D.png used on input line 338.
+(pdftex.def)             Requested size: 116.99245pt x 107.80403pt.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-<images/track_frame_00010_01.pdf, id=25, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_01.pdf Graphic file (type pdf)
 
-<use images/track_frame_00010_01.pdf>
-Package pdftex.def Info: images/track_frame_00010_01.pdf used on input line 496
+<images/App_cluster_profiles.png, id=29, 1169.36874pt x 647.41875pt>
+File: images/App_cluster_profiles.png Graphic file (type png)
+
+<use images/App_cluster_profiles.png>
+Package pdftex.def Info: images/App_cluster_profiles.png used on input line 354
 .
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
+(pdftex.def)             Requested size: 210.58435pt x 134.75673pt.
 
-<images/track_frame_00050_01.pdf, id=26, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_01.pdf Graphic file (type pdf)
+<images/Call_cluster_profiles.png, id=30, 2849.64626pt x 1255.69125pt>
+File: images/Call_cluster_profiles.png Graphic file (type png)
 
-<use images/track_frame_00050_01.pdf>
-Package pdftex.def Info: images/track_frame_00050_01.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
+<use images/Call_cluster_profiles.png>
+Package pdftex.def Info: images/Call_cluster_profiles.png used on input line 35
+4.
+(pdftex.def)             Requested size: 210.58354pt x 134.75426pt.
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 
-<images/track_frame_00450_01.pdf, id=27, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_01.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_01.pdf>
-Package pdftex.def Info: images/track_frame_00450_01.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_01.pdf, id=28, 95.35625pt x 90.3375pt>
-File: images/track_frame_02000_01.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_01.pdf>
-Package pdftex.def Info: images/track_frame_02000_01.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.11815pt.
-
-<images/track_frame_04999_01.pdf, id=29, 95.35625pt x 90.3375pt>
-File: images/track_frame_04999_01.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_01.pdf>
-Package pdftex.def Info: images/track_frame_04999_01.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.11815pt.
-
-<images/track_frame_00010_02.pdf, id=30, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_02.pdf Graphic file (type pdf)
-
-<use images/track_frame_00010_02.pdf>
-Package pdftex.def Info: images/track_frame_00010_02.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00050_02.pdf, id=31, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_02.pdf Graphic file (type pdf)
-
-<use images/track_frame_00050_02.pdf>
-Package pdftex.def Info: images/track_frame_00050_02.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00450_02.pdf, id=32, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_02.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_02.pdf>
-Package pdftex.def Info: images/track_frame_00450_02.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_02.pdf, id=33, 94.3525pt x 90.3375pt>
-File: images/track_frame_02000_02.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_02.pdf>
-Package pdftex.def Info: images/track_frame_02000_02.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_04999_02.pdf, id=34, 94.3525pt x 90.3375pt>
-File: images/track_frame_04999_02.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_02.pdf>
-Package pdftex.def Info: images/track_frame_04999_02.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00010_03.pdf, id=35, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_03.pdf Graphic file (type pdf)
-
-<use images/track_frame_00010_03.pdf>
-Package pdftex.def Info: images/track_frame_00010_03.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00050_03.pdf, id=36, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_03.pdf Graphic file (type pdf)
-
-<use images/track_frame_00050_03.pdf>
-Package pdftex.def Info: images/track_frame_00050_03.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00450_03.pdf, id=37, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_03.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_03.pdf>
-Package pdftex.def Info: images/track_frame_00450_03.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_03.pdf, id=38, 94.3525pt x 90.3375pt>
-File: images/track_frame_02000_03.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_03.pdf>
-Package pdftex.def Info: images/track_frame_02000_03.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_04999_03.pdf, id=39, 94.3525pt x 90.3375pt>
-File: images/track_frame_04999_03.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_03.pdf>
-Package pdftex.def Info: images/track_frame_04999_03.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00010_04.pdf, id=40, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_04.pdf Graphic file (type pdf)
-
-<use images/track_frame_00010_04.pdf>
-Package pdftex.def Info: images/track_frame_00010_04.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00050_04.pdf, id=41, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_04.pdf Graphic file (type pdf)
-
-<use images/track_frame_00050_04.pdf>
-Package pdftex.def Info: images/track_frame_00050_04.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00450_04.pdf, id=42, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_04.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_04.pdf>
-Package pdftex.def Info: images/track_frame_00450_04.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_04.pdf, id=43, 94.3525pt x 90.3375pt>
-File: images/track_frame_02000_04.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_04.pdf>
-Package pdftex.def Info: images/track_frame_02000_04.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_04999_04.pdf, id=44, 94.3525pt x 90.3375pt>
-File: images/track_frame_04999_04.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_04.pdf>
-Package pdftex.def Info: images/track_frame_04999_04.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00010_05.pdf, id=45, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_05.pdf Graphic file (type pdf)
-
-<use images/track_frame_00010_05.pdf>
-Package pdftex.def Info: images/track_frame_00010_05.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00050_05.pdf, id=46, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_05.pdf Graphic file (type pdf)
-
-<use images/track_frame_00050_05.pdf>
-Package pdftex.def Info: images/track_frame_00050_05.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00450_05.pdf, id=47, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_05.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_05.pdf>
-Package pdftex.def Info: images/track_frame_00450_05.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_05.pdf, id=48, 94.3525pt x 90.3375pt>
-File: images/track_frame_02000_05.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_05.pdf>
-Package pdftex.def Info: images/track_frame_02000_05.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_04999_05.pdf, id=49, 94.3525pt x 90.3375pt>
-File: images/track_frame_04999_05.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_05.pdf>
-Package pdftex.def Info: images/track_frame_04999_05.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00010_06.pdf, id=50, 94.3525pt x 90.3375pt>
-File: images/track_frame_00010_06.pdf Graphic file (type pdf)
-
-<use images/track_frame_00010_06.pdf>
-Package pdftex.def Info: images/track_frame_00010_06.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00050_06.pdf, id=51, 94.3525pt x 90.3375pt>
-File: images/track_frame_00050_06.pdf Graphic file (type pdf)
-
-<use images/track_frame_00050_06.pdf>
-Package pdftex.def Info: images/track_frame_00050_06.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_00450_06.pdf, id=52, 94.3525pt x 90.3375pt>
-File: images/track_frame_00450_06.pdf Graphic file (type pdf)
-
-<use images/track_frame_00450_06.pdf>
-Package pdftex.def Info: images/track_frame_00450_06.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_02000_06.pdf, id=53, 94.3525pt x 90.3375pt>
-File: images/track_frame_02000_06.pdf Graphic file (type pdf)
-
-<use images/track_frame_02000_06.pdf>
-Package pdftex.def Info: images/track_frame_02000_06.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-<images/track_frame_04999_06.pdf, id=54, 94.3525pt x 90.3375pt>
-File: images/track_frame_04999_06.pdf Graphic file (type pdf)
-
-<use images/track_frame_04999_06.pdf>
-Package pdftex.def Info: images/track_frame_04999_06.pdf used on input line 496
-.
-(pdftex.def)             Requested size: 44.45798pt x 42.56613pt.
-
-Overfull \hbox (6.10748pt too wide) in paragraph at lines 496--496
+Underfull \hbox (badness 10000) detected at line 385
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 496--496
-
- []
-
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-
-Underfull \hbox (badness 10000) detected at line 527
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 527--527
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
 
  []
 
@@ -1127,53 +928,37 @@ Missing character: There is no ; in font nullfont!
 [2
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
-s/bos_logo_sm.png> <./images/2015_intensity_surface.png> <./images/2015_respons
-e_time_surface.png> <./images/graph_model.png> <./images/track_frame_00010_01.p
-df> <./images/track_frame_00050_01.pdf> <./images/track_frame_00450_01.pdf> <./
-images/track_frame_02000_01.pdf> <./images/track_frame_04999_01.pdf> <./images/
-track_frame_00010_02.pdf> <./images/track_frame_00050_02.pdf> <./images/track_f
-rame_00450_02.pdf> <./images/track_frame_02000_02.pdf> <./images/track_frame_04
-999_02.pdf> <./images/track_frame_00010_03.pdf> <./images/track_frame_00050_03.
-pdf> <./images/track_frame_00450_03.pdf> <./images/track_frame_02000_03.pdf> <.
-/images/track_frame_04999_03.pdf> <./images/track_frame_00010_04.pdf> <./images
-/track_frame_00050_04.pdf> <./images/track_frame_00450_04.pdf> <./images/track_
-frame_02000_04.pdf> <./images/track_frame_04999_04.pdf> <./images/track_frame_0
-0010_05.pdf> <./images/track_frame_00050_05.pdf> <./images/track_frame_00450_05
-.pdf> <./images/track_frame_02000_05.pdf> <./images/track_frame_04999_05.pdf> <
-./images/track_frame_00010_06.pdf> <./images/track_frame_00050_06.pdf> <./image
-s/track_frame_00450_06.pdf> <./images/track_frame_02000_06.pdf> <./images/track
-_frame_04999_06.pdf>] (./Boston311_poster.aux) ) 
+s/bos_logo_sm.png> <./images/Intensity_call.png> <./images/Intensity_app.png> <
+./images/graph_model.png> <./images/Call_3D.png> <./images/Call_2D.png> <./imag
+es/App_3D.png> <./images/App_2D.png> <./images/App_cluster_profiles.png> <./ima
+ges/Call_cluster_profiles.png>] (./Boston311_poster.aux) ) 
 Here is how much of TeX's memory you used:
- 15412 strings out of 493315
- 292702 string characters out of 6137904
- 585066 words of memory out of 5000000
- 18433 multiletter control sequences out of 15000+600000
- 50592 words of font info for 100 fonts, out of 8000000 for 9000
+ 15172 strings out of 493315
+ 286172 string characters out of 6137904
+ 531479 words of memory out of 5000000
+ 18233 multiletter control sequences out of 15000+600000
+ 40507 words of font info for 77 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,27n,70p,427b,1540s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti8.pfb>
-Output written on Boston311_poster.pdf (1 page, 10407012 bytes).
+ 63i,27n,70p,427b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2
+013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti7.pfb>
+Output written on Boston311_poster.pdf (1 page, 4027656 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 104 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
