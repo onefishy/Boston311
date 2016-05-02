@@ -337,23 +337,25 @@
  headershade=plain,
  background=none,
  bgColorOne=cyan!10!white,
- headerheight=0.12\textheight}
+ headerheight=0.11\textheight}
  % Eye Catcher
  {
       %\includegraphics[width=0.30\linewidth]{311_logo}
  }
  % Title
- {\sc\Huge Analyzing Boston 311 Requests Using Gaussian Mixture Models}
+ {\sc\Huge Analyzing Boston 311 Requests with Gaussian Mixture Models}
  % Authors
- {Jane Huang, Isadora Nun, Weiwei Pan and Francisco Rivera\\[1em]
-% {\texttt{Brian.Amberg@unibas.ch, ab@microsoft.com, Thomas.Vetter@unibas.ch}}
+ {Jane Huang, Isadora Nun, Weiwei Pan and Francisco Rivera\\
+ {AM 207 Spring 2016}
+
 }
  % University logo
  {
   \begin{tabular}{r}
-    \includegraphics[height=0.12\textheight]{bos_logo_sm}
+    \includegraphics[height=0.11\textheight]{bos_logo_sm}
   \end{tabular}
  }
+ 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Now define the boxes that make up the poster
@@ -369,13 +371,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Introduction: }{name=contribution,column=0,row=0,span=2}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Traditionally, Bostonians have been able to report problems such as potholes or graffiti through phone calls to city non-emergency services. Ubiquitous smartphone technology now also allows Bostonians to contact 311 services through the Citizens Connect App. 
+Traditionally, Boston residents have been able to report problems such as potholes or graffiti through phone calls to city non-emergency services. Ubiquitous smartphone technology now also allows Boston residents to contact 311 services through the Citizens Connect App. 
 \vskip0.2cm
-\textbf{Goal:} compare the patterns in 311 requests and responses originating from constituent calls and the new Citizens Connect App. 
+\textbf{Goal:} Compare the effectiveness of responses to requests made through constituent calls and Citizens Connect App by modeling the geographic and response time distribution with Gaussian mixture models.
   \begin{center}
   \includegraphics[width=0.43\textwidth, height=0.20\textheight]{Intensity_call}
-  \includegraphics[width=0.43\textwidth, height=0.20\textheight]{Intensity_app}
-  \captionof{figure}{311 request volume intensity surface for constituent calls and Citizens Connect App (2015)}
+  \includegraphics[width=0.43\textwidth, height=0.20\textheight]{Intensity_app} \\
+     \footnotesize{311 request volume intensity surface for constituent calls and Citizens Connect App (2015)}
   \end{center}
   }
 
@@ -385,40 +387,39 @@ Traditionally, Bostonians have been able to report problems such as potholes or 
     \begin{center}
     \includegraphics[width=0.60\textwidth, height=0.12\textheight]{graph_model}
     \end{center}
-    A basic generative model for our mixture can be specified by the following:
-\begin{align}
-\pi &\sim Dir(\alpha_0)\\
-\Sigma^{-1}_k &\sim Wish(W_0, \nu_0)\\
-\mu_k | \Sigma^{-1}_k &\sim \N(\eta_0, (\beta_0 \Sigma^{-1}_k )^{-1})\\
-z_n | \pi &\sim \prod_{k=1}^K \pi_k^{z_{nk}}\\
-x_n | Z, \mu, \Sigma^{-1} &\sim \prod_{k=1}^K \N(\mu_k, \Sigma^{-1}_k)^{z_{nk}}
-\end{align}
-Note that the parameters of our model is 
-\begin{align}
+     \small{Our $K$-component Gaussian mixture model is defined as:}
+\begin{align*}
+\pi &\sim Dir(\alpha_0) &\tiny{(\text{Mixture Coefficient})}&\\
+\Lambda_k &\sim Wish(W_0, \nu_0)& \tiny{(\text{Component Precision Matrix})}& \\
+\mu_k | \Lambda_k &\sim \N(\eta_0, (\beta_0 \Lambda_k )^{-1}) &\tiny{(\text{Component Mean})}&\\
+z_n | \pi &\sim \prod_{k=1}^K \pi_k^{z_{nk}} & \tiny{(\text{Label})}&\\
+x_n | Z, \mu, \Lambda &\sim \prod_{k=1}^K \N(\mu_k, \Lambda_k)^{z_{nk}} &\tiny{(\text{Likelihood})}&
+\end{align*}
+Note that the set of hyper-parameters of our model is 
+\begin{align*}
 \theta = (\alpha_0, W_0, \nu_0, \eta_0, \beta_0).
-\end{align} 
-}
+\end{align*} }
 
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   \headerbox{Latent Clusters in 311 Data}{name=speed,column=2,row=0,span=2}{
+   \headerbox{Results for Latent Clusters in 311 Data}{name=speed,column=2,row=0,span=2}{
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \setlength{\tabcolsep}{0pt}
- \textbf{Clustering based on MAP Estimates} The results for constituent calls and the Citizens Connect App are similar. The largest cluster, containing the fastest responses, is centered at 4.5 days, the next largest cluster is centered at 50 days, and the smallest cluster is centered at 266 days. The geographic centers of these clusters appear similar, suggesting that different areas of the city are equitably served by 311.
+ \textbf{Clustering based on MAP Estimates} Our different estimation techniques consistently indicate that for both the Citizens Connect and constituent call data, the largest cluster is characterized by a short response time, the next largest cluster is characterized by a somewhat longer response time, and the smallest cluster is characterized by a very slow mean response time. For example, for MAP, the results for constituent calls and the Citizens Connect App are similar, with the largest cluster is centered at 4.5 days, the next largest at 50 days, and the smallest at 266 days. The covariances between geography and response time appear to be stronger for the slowest response time cluster compared to the faster response time clusters. 
  \begin{tabular}{cc}
    \includegraphics[width=0.23\textwidth, height=0.15\textheight]{Call_3D}      
-   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{Call_2D}
+   \includegraphics[width=0.25\textwidth, height=0.15\textheight]{Call_2D}
     &
    \includegraphics[width=0.23\textwidth, height=0.15\textheight]{App_3D}   
-   \includegraphics[width=0.25\textwidth, height=0.16\textheight]{App_2D}\\
-   \footnotesize{ \textbf{(a)} 3D \& 2D projects of clusters (constituent calls)}&
-   \footnotesize{ \textbf{(b)} 3D\& 2D projects of clusters (Citizens Connect App)}
+   \includegraphics[width=0.25\textwidth, height=0.15\textheight]{App_2D}\\
+   \footnotesize{ \textbf{(a)} 3D \& 2D projections of clusters (constituent calls)}&
+   \footnotesize{ \textbf{(b)} 3D \& 2D projections of clusters (Citizens Connect App)}
   \end{tabular}
   
   \setlength{\tabcolsep}{0pt}
  \begin{tabular}{L{8cm}C{8cm}}
-   \textbf{Posterior predictive distribution} We show the posterior predictive distributions generated from our Gibbs sampler. While the full complexity of the Boston 311 data is not completely described by the three component Gaussian mixture model, a mixture model is still useful for understanding how the 311 requests spread apart, largely along the response time axis.
+   \textbf{Posterior predictive distribution} We show the posterior predictive distributions generated from our Gibbs sampler. While the full complexity of the Boston 311 data is not completely described by the three component Gaussian mixture model, a mixture model is still useful for understanding how the 311 requests spread apart into components differentiated by response times. 
     &
    \includegraphics[width=0.46\textwidth, height=0.15\textheight]{post_pred}   
    \footnotesize{ \textbf{(b)} Posterior predictive distributions for call and app data}
@@ -435,34 +436,35 @@ Note that the parameters of our model is
    }
 
  \begin{tabular}{cc}
-   \includegraphics[width=0.45\textwidth, height=0.20\textheight]{Call_cluster_profiles}&
-   \includegraphics[width=0.45\textwidth, height=0.20\textheight]{App_cluster_profiles}\\
+   \includegraphics[width=0.44\textwidth, height=0.19\textheight]{Call_cluster_profiles}&
+   \includegraphics[width=0.44\textwidth, height=0.19\textheight]{App_cluster_profiles}\\
    \footnotesize{\textbf{(a)} Cluster profiles (constituent call)} &  \footnotesize{\textbf{(a)} Cluster profiles (Citizens Connect App)}
   \end{tabular}
   \vskip0.2cm
-  \textbf{Analysis:} We show the composition of each cluster by type of service requested. The composition profiles of constituent call clusters differ from those of Citizens Connect App. This is expected as the overall profile of call data differs from app data. The profiles of the cluster within each set of data are similar and confirms that the clustering we find falls principally along time, with the two smaller clusters partitioning the tail of the response time distributions of the various request types.
+ After identifying the clusters, we examined the qualitative data associated with each request to understand the composition of each cluster by type of service requested. While for both Citizens Connect App and constituent call requests, the clustering is comparable in terms of slow, medium, and fast response times, the differing compositions between the two sets of clusters hints that the reasons for the lagging response times may be associated with different latent characteristics. These results provide a foundation for building more detailed models of what request characteristics may be predictors of lagging response times. 
    }
 
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Inference}{name=algorithm,column=1,above=bottom,below=contribution}{
+  \headerbox{Methods}{name=algorithm,column=1,above=bottom,below=contribution}{
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  We analyze a randomly drawn subset of 2015 reports made to Boston 311 through either constituent call or the Citizens Connect App. 
+  We analyze a randomly drawn subset of 2015 reports made to Boston 311 through either constituent calls or the Citizens Connect App. 
  \vskip0.2cm
   This dataset is publicly available at:
   \begin{align*}
    \small{\mathtt{https://data.cityofboston.gov/}}. 
    \end{align*}
   \vskip0.2cm
-Each point in the data, $\vx_n$, is a three dimensional vector with features: 
+Each datapoint, $\vx_n$, is a three-dimensional vector with features: 
 \begin{center}
 (\emph{response time}, \emph{longitude}, \emph{latitude}).
 \end{center}
   \vskip0.2cm
-Using the Bayes Information Criterion, we selected the number of components in our model to be $K=3$. 
+Using the Bayes Information Criterion, we chose a model with $K=3$ components. 
  \vskip0.2cm
-We compute both the MLE and the MAP estimations for the parameters of the components through Expectation Maximization. Our EM algorithms are initialized with results from K-means and simulated annealing. 
- \vskip0.2cmThe point estimates to initialize a Gibbs sampler for the posterior distribution. These samples are then used to generate the posterior predictive distribution to compare to the original data.
+We compute both maximum likelihood estimates and maximum a posterior estimates for the component parameters through expectation maximization. We compared these point estimates to the results for simulated annealing. 
+ \vskip0.2cm
+The point estimates are used to initialize a Gibbs sampler to obtain the posterior distribution. These samples are then used to generate the posterior predictive distribution to compare to the original data.
    }
 \end{poster}%
 %
