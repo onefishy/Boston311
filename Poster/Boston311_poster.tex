@@ -326,8 +326,9 @@
  % Column spacing
  colspacing=0.7em,
  % Color style
- headerColorOne=cyan!20!white!90!black,
- borderColor=cyan!30!white!90!black,
+ headerColorOne=blue,
+ headerFontColor=white,
+ borderColor=blue,
  % Format of textbox
  textborder=faded,
  % Format of text header
@@ -377,6 +378,7 @@ Traditionally, Bostonians have been able to report problems such as potholes or 
   \captionof{figure}{311 request volume intensity surface for constituent calls and Citizens Connect App (2015)}
   \end{center}
   }
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{The Model}{name=abstract,column=0,below=contribution}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -416,7 +418,7 @@ Note that the parameters of our model is
   
   \setlength{\tabcolsep}{0pt}
  \begin{tabular}{L{8cm}C{8cm}}
-   \textbf{Posterior predictive distribution} We show the posterior predictive distributions generated from our Gibbs sampler. While the full complexity of the Boston 311 data is not completely de scribed by the three component Gaussian mixture model, a mixture model is still useful for understanding how the 311 requests spread apart, largely along the response time axis.
+   \textbf{Posterior predictive distribution} We show the posterior predictive distributions generated from our Gibbs sampler. While the full complexity of the Boston 311 data is not completely described by the three component Gaussian mixture model, a mixture model is still useful for understanding how the 311 requests spread apart, largely along the response time axis.
     &
    \includegraphics[width=0.46\textwidth, height=0.15\textheight]{post_pred}   
    \footnotesize{ \textbf{(b)} Posterior predictive distributions for call and app data}
