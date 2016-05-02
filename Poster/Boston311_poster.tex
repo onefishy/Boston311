@@ -370,7 +370,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Traditionally, Bostonians have been able to report problems such as potholes or graffiti through phone calls to city non-emergency services. Ubiquitous smartphone technology now also allows Bostonians to contact 311 services through the Citizens Connect App. 
 \vskip0.2cm
-\textbf{Goal:} compare the patterns in 311 requests and responses originating from constituent calls and the new Citizens Connect App. 
+\textbf{Goal:} Compare effectiveness of response to constituent calls and Citizens Connect App by modeling the geographic and response time distribution with Gaussian mixture models.
   \begin{center}
   \includegraphics[width=0.43\textwidth, height=0.20\textheight]{Intensity_call}
   \includegraphics[width=0.43\textwidth, height=0.20\textheight]{Intensity_app}
@@ -381,20 +381,20 @@ Traditionally, Bostonians have been able to report problems such as potholes or 
   \headerbox{The Model}{name=abstract,column=0,below=contribution}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{center}
-    \includegraphics[width=0.60\textwidth, height=0.12\textheight]{graph_model}
+    \includegraphics[width=0.78\textwidth, height=0.16\textheight]{graph_model}
     \end{center}
-    A basic generative model for our mixture can be specified by the following:
-\begin{align}
-\pi &\sim Dir(\alpha_0)\\
-\Sigma^{-1}_k &\sim Wish(W_0, \nu_0)\\
-\mu_k | \Sigma^{-1}_k &\sim \N(\eta_0, (\beta_0 \Sigma^{-1}_k )^{-1})\\
-z_n | \pi &\sim \prod_{k=1}^K \pi_k^{z_{nk}}\\
-x_n | Z, \mu, \Sigma^{-1} &\sim \prod_{k=1}^K \N(\mu_k, \Sigma^{-1}_k)^{z_{nk}}
-\end{align}
-Note that the parameters of our model is 
-\begin{align}
+    \small{Our $K$-component Gaussian mixture model is defined as:}
+\begin{align*}
+\pi &\sim Dir(\alpha_0) &\tiny{(\text{Mixture Coefficient})}&\\
+\Lambda_k &\sim Wish(W_0, \nu_0)& \tiny{(\text{Component Precision})}& \\
+\mu_k | \Lambda_k &\sim \N(\eta_0, (\beta_0 \Lambda_k )^{-1}) &\tiny{(\text{Component Mean})}&\\
+z_n | \pi &\sim \prod_{k=1}^K \pi_k^{z_{nk}} & \tiny{(\text{Label})}&\\
+x_n | Z, \mu, \Lambda &\sim \prod_{k=1}^K \N(\mu_k, \Lambda_k)^{z_{nk}} &\tiny{(\text{Likelihood})}&
+\end{align*}
+Note that the set of hyper-parameters of our model is 
+\begin{align*}
 \theta = (\alpha_0, W_0, \nu_0, \eta_0, \beta_0).
-\end{align} 
+\end{align*} 
 }
 
 
@@ -460,7 +460,8 @@ Each point in the data, $\vx_n$, is a three dimensional vector with features:
 Using the Bayes Information Criterion, we selected the number of components in our model to be $K=3$. 
  \vskip0.2cm
 We compute both the MLE and the MAP estimations for the parameters of the components through Expectation Maximization. Our EM algorithms are initialized with results from K-means and simulated annealing. 
- \vskip0.2cmThe point estimates to initialize a Gibbs sampler for the posterior distribution. These samples are then used to generate the posterior predictive distribution to compare to the original data.
+ \vskip0.2cm
+The point estimates initialize a Gibbs sampler for the posterior distribution. These samples are then used to generate the posterior predictive distribution to compare to the original data.
    }
 \end{poster}%
 %
