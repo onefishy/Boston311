@@ -80,14 +80,14 @@ queue()
             .attr("r", 5)
             .style("fill", function(d){
 
-                    return colorbrewer.Set1[4][ d.Cluster]
+                    return colors[ d.Cluster]
                 })
 
             .style("opacity",0.7);
 
 })
 
-colors = [""]
+colors = ['#63ffc4 ','#0096b2 ','#ff7500 ']
 
 
 
