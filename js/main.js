@@ -38,13 +38,13 @@ svg.call(tip);
 
 queue()
     .defer(d3.json, "data/neighborhoods_json.json")
-    .defer(d3.json, "data/d3_boston311_3K.json")
+    //.defer(d3.json, "data/d3_boston311_3K.json")
+    .defer(d3.json, "data/clusters_calls.json")
     .await(function(error, data, clusters) {
 
 //d3.json("data/neighborhoods_json.json", function(error, data) {
 //    console.log(data.features)
 //    console.log(clusters)
-
     g.selectAll( "path" )
         .data( data.features )
         .enter()
@@ -72,20 +72,22 @@ queue()
             .enter()
             .append("circle")
             .attr("cx", function(d) {
-                return albersProjection([d.longitude, d.latitude])[0];
+                return albersProjection([d.LONGITUDE, d.LATITUDE])[0];
             })
             .attr("cy", function(d) {
-                return albersProjection([d.longitude, d.latitude])[1];
+                return albersProjection([d.LONGITUDE, d.LATITUDE])[1];
             })
             .attr("r", 5)
             .style("fill", function(d){
 
-                    return colorbrewer.Set1[4][ d.cluster]
+                    return colorbrewer.Set1[4][ d.Cluster]
                 })
 
             .style("opacity",0.7);
 
 })
+
+colors = [""]
 
 
 
