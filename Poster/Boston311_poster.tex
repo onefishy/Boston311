@@ -406,7 +406,7 @@ Note that the set of hyper-parameters of our model is
    \headerbox{Results for Latent Clusters in 311 Data}{name=speed,column=2,row=0,span=2}{
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  \setlength{\tabcolsep}{0pt}
- \textbf{Clustering based on MAP Estimates} Our different estimation techniques consistently indicate that for both the Citizens Connect and constituent call data, the largest cluster is characterized by a short response time, the next largest cluster is characterized by a somewhat longer response time, and the smallest cluster is characterized by a very slow mean response time. For example, for MAP, the results for constituent calls and the Citizens Connect App are similar, with the largest cluster is centered at 4.5 days, the next largest at 50 days, and the smallest at 266 days. The covariances between geography and response time appear to be stronger for the slowest response time cluster compared to the faster response time clusters. 
+ \textbf{Clustering based on MAP Estimates} Our different estimation techniques consistently indicate that for both the Citizens Connect and constituent call data, the largest cluster is characterized by a short response time, the next largest cluster is characterized by a somewhat longer response time, and the smallest cluster is characterized by a very slow mean response time. For example, for MAP, the results for constituent calls and the Citizens Connect App are similar, with the largest cluster centered at 4.5 days, the next largest at 50 days, and the smallest at 266 days. The covariances between geography and response time are larger for the slowest response time cluster compared to the faster response time clusters. 
  \begin{tabular}{cc}
    \includegraphics[width=0.23\textwidth, height=0.15\textheight]{Call_3D}      
    \includegraphics[width=0.25\textwidth, height=0.15\textheight]{Call_2D}
@@ -441,7 +441,7 @@ Note that the set of hyper-parameters of our model is
    \footnotesize{\textbf{(a)} Cluster profiles (constituent call)} &  \footnotesize{\textbf{(a)} Cluster profiles (Citizens Connect App)}
   \end{tabular}
   \vskip0.2cm
- After identifying the clusters, we examined the qualitative data associated with each request to understand the composition of each cluster by type of service requested. While for both Citizens Connect App and constituent call requests, the clustering is comparable in terms of slow, medium, and fast response times, the differing compositions between the two sets of clusters hints that the reasons for the lagging response times may be associated with different latent characteristics. These results provide a foundation for building more detailed models of what request characteristics may be predictors of lagging response times. 
+ After identifying the clusters, we examined the qualitative data associated with each request to understand the composition of each cluster by type of service requested. While for both Citizens Connect App and constituent call requests, the clustering is comparable in terms of slow, medium, and fast response times, the differing compositions between the two sets of clusters hints that the reasons for the lagging response times may be associated with different latent characteristics. These results provide a foundation for building more detailed models examining predictors of lagging response times. 
    }
 
 
@@ -462,7 +462,7 @@ Each datapoint, $\vx_n$, is a three-dimensional vector with features:
   \vskip0.2cm
 Using the Bayes Information Criterion, we chose a model with $K=3$ components. 
  \vskip0.2cm
-We compute both maximum likelihood estimates and maximum a posterior estimates for the component parameters through expectation maximization. We compared these point estimates to the results for simulated annealing. 
+We compute both maximum likelihood estimates and maximum a posteriori estimates for the component parameters through expectation maximization. We compared these point estimates to the results for simulated annealing. 
  \vskip0.2cm
 The point estimates are used to initialize a Gibbs sampler to obtain the posterior distribution. These samples are then used to generate the posterior predictive distribution to compare to the original data.
    }
