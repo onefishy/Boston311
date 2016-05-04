@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{newurbanmechanics}
+{Boston's Mayor's Office of New Urban Mechanics}.
+\newblock {Citizens Connect}.
+\newblock \url{http://www.cityofboston.gov/news/Default.aspx?id=20283}.
+
+\bibitem{walshpressrelease}
+{City of Boston Mayor's Office}.
+\newblock {Mayor Walsh Launches Boston 311}.
+\newblock Press Release, August 2015.
+\newblock \url{http://www.cityofboston.gov/news/Default.aspx?id=20283}.
+
+\bibitem{Gelman}
+A.~Gelman, J.~B. Carlin, H.~S. Stern, and D.~B. Rubin.
+\newblock {\em Bayesian Data Analysis}.
+\newblock Chapman \& Hall/CRC, 2nd edition, 2004.
+
+\bibitem{Jones}
+J.~H. Jones and S.~Jackman.
+\newblock Bayesian hierarchical mixture models for high-risk births.
+\newblock Population Association of American 2008 Annual Meeting, 2008.
+
+\bibitem{Stephens}
+M.~Stephens.
+\newblock Dealing with label switching in mixture models.
+\newblock {\em J. R. Statist. Soc. B}, 62:795--809, 2000.
+
+\end{thebibliography}
