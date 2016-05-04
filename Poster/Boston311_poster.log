@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  1 MAY 2016 19:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.5.30)  4 MAY 2016 17:02
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -690,37 +690,72 @@ LaTeX Font Info:    Try loading font information for T1+aer on input line 100.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/ae/t1aer.fd
 File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
 )))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen201
+\captionmargin@=\dimen202
+\captionwidth=\dimen203
+\caption@tempdima=\dimen204
+\caption@indent=\dimen205
+\caption@parindent=\dimen206
+\caption@hangindent=\dimen207
+)
+\c@ContinuedFloat=\count149
+)
 \symnark=\mathgroup6
 
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen208
+\extrarowheight=\dimen209
+\NC@list=\toks31
+\extratabsurround=\skip83
+\backup@length=\skip84
+)
+\TX@col@width=\dimen210
+\TX@old@table=\dimen211
+\TX@old@col=\dimen212
+\TX@target=\dimen213
+\TX@delta=\dimen214
+\TX@cols=\count150
+\TX@ftn=\toks32
+)
 (./Boston311_poster.aux)
 \openout1 = `Boston311_poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 244.
-LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count149
-\scratchdimen=\dimen201
+\scratchcounter=\count151
+\scratchdimen=\dimen215
 \scratchbox=\box75
-\nofMPsegments=\count150
-\nofMParguments=\count151
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count152
-\MPscratchDim=\dimen202
-\MPnumerator=\count153
-\makeMPintoPDFobject=\count154
-\everyMPtoPDFconversion=\toks32
+\nofMPsegments=\count152
+\nofMParguments=\count153
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count154
+\MPscratchDim=\dimen216
+\MPnumerator=\count155
+\makeMPintoPDFobject=\count156
+\everyMPtoPDFconversion=\toks34
 ) ABD: EveryShipout initializing macros
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -800,16 +835,18 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 282.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 357.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 282.
+LaTeX Font Info:    Try loading font information for U+msb on input line 357.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 282.
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 357.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/doublestroke/Udsrom.fd
@@ -819,22 +856,22 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 File: images/bos_logo_sm.png Graphic file (type png)
 
 <use images/bos_logo_sm.png>
-Package pdftex.def Info: images/bos_logo_sm.png used on input line 282.
-(pdftex.def)             Requested size: 80.85301pt x 80.85422pt.
+Package pdftex.def Info: images/bos_logo_sm.png used on input line 357.
+(pdftex.def)             Requested size: 74.11398pt x 74.11978pt.
 
 <images/Intensity_call.png, id=22, 1163.34625pt x 682.55pt>
 File: images/Intensity_call.png Graphic file (type png)
 
 <use images/Intensity_call.png>
-Package pdftex.def Info: images/Intensity_call.png used on input line 303.
-(pdftex.def)             Requested size: 224.62383pt x 154.97313pt.
+Package pdftex.def Info: images/Intensity_call.png used on input line 382.
+(pdftex.def)             Requested size: 201.20998pt x 134.75787pt.
 
 <images/Intensity_app.png, id=23, 1112.155pt x 667.49374pt>
 File: images/Intensity_app.png Graphic file (type png)
 
 <use images/Intensity_app.png>
-Package pdftex.def Info: images/Intensity_app.png used on input line 303.
-(pdftex.def)             Requested size: 224.6162pt x 154.96661pt.
+Package pdftex.def Info: images/Intensity_app.png used on input line 382.
+(pdftex.def)             Requested size: 201.21443pt x 134.75934pt.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -843,84 +880,101 @@ Missing character: There is no ; in font nullfont!
 File: images/graph_model.png Graphic file (type png)
 
 <use images/graph_model.png>
-Package pdftex.def Info: images/graph_model.png used on input line 310.
-(pdftex.def)             Requested size: 214.2212pt x 134.76419pt.
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
+Package pdftex.def Info: images/graph_model.png used on input line 401.
+(pdftex.def)             Requested size: 191.67432pt x 121.28374pt.
 
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+
+LaTeX Font Warning: Command \tiny invalid in math mode on input line 401.
+
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
 <images/Call_3D.png, id=25, 681.54625pt x 587.19376pt>
 File: images/Call_3D.png Graphic file (type png)
 
 <use images/Call_3D.png>
-Package pdftex.def Info: images/Call_3D.png used on input line 338.
+Package pdftex.def Info: images/Call_3D.png used on input line 428.
 (pdftex.def)             Requested size: 107.62488pt x 101.06703pt.
  <images/Call_2D.png, id=26, 790.955pt x 662.475pt>
 File: images/Call_2D.png Graphic file (type png)
 
 <use images/Call_2D.png>
-Package pdftex.def Info: images/Call_2D.png used on input line 338.
-(pdftex.def)             Requested size: 116.98468pt x 107.80759pt.
+Package pdftex.def Info: images/Call_2D.png used on input line 428.
+(pdftex.def)             Requested size: 116.98468pt x 101.06519pt.
  <images/App_3D.png, id=27, 688.5725pt x 590.205pt>
 File: images/App_3D.png Graphic file (type png)
 
 <use images/App_3D.png>
-Package pdftex.def Info: images/App_3D.png used on input line 338.
+Package pdftex.def Info: images/App_3D.png used on input line 428.
 (pdftex.def)             Requested size: 107.63121pt x 101.06299pt.
  <images/App_2D.png, id=28, 835.12pt x 636.3775pt>
 File: images/App_2D.png Graphic file (type png)
 
 <use images/App_2D.png>
-Package pdftex.def Info: images/App_2D.png used on input line 338.
-(pdftex.def)             Requested size: 116.99245pt x 107.80403pt.
-File: images/Call_3D.png Graphic file (type png)
- <use images/Call_3D.png>
-Package pdftex.def Info: images/Call_3D.png used on input line 338.
-(pdftex.def)             Requested size: 107.62488pt x 101.06703pt.
-File: images/Call_2D.png Graphic file (type png)
- <use images/Call_2D.png>
-Package pdftex.def Info: images/Call_2D.png used on input line 338.
-(pdftex.def)             Requested size: 116.98468pt x 107.80759pt.
-File: images/App_3D.png Graphic file (type png)
+Package pdftex.def Info: images/App_2D.png used on input line 428.
+(pdftex.def)             Requested size: 116.99245pt x 101.06506pt.
 
-<use images/App_3D.png>
-Package pdftex.def Info: images/App_3D.png used on input line 338.
-(pdftex.def)             Requested size: 107.63121pt x 101.06299pt.
-File: images/App_2D.png Graphic file (type png)
- <use images/App_2D.png>
-Package pdftex.def Info: images/App_2D.png used on input line 338.
-(pdftex.def)             Requested size: 116.99245pt x 107.80403pt.
+<images/post_pred.png, id=29, 1224.575pt x 563.10374pt>
+File: images/post_pred.png Graphic file (type png)
+
+<use images/post_pred.png>
+Package pdftex.def Info: images/post_pred.png used on input line 428.
+(pdftex.def)             Requested size: 215.25679pt x 101.06216pt.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-<images/App_cluster_profiles.png, id=29, 1169.36874pt x 647.41875pt>
-File: images/App_cluster_profiles.png Graphic file (type png)
-
-<use images/App_cluster_profiles.png>
-Package pdftex.def Info: images/App_cluster_profiles.png used on input line 354
-.
-(pdftex.def)             Requested size: 210.58435pt x 134.75673pt.
 
 <images/Call_cluster_profiles.png, id=30, 2849.64626pt x 1255.69125pt>
 File: images/Call_cluster_profiles.png Graphic file (type png)
 
 <use images/Call_cluster_profiles.png>
-Package pdftex.def Info: images/Call_cluster_profiles.png used on input line 35
-4.
-(pdftex.def)             Requested size: 210.58354pt x 134.75426pt.
+Package pdftex.def Info: images/Call_cluster_profiles.png used on input line 44
+5.
+(pdftex.def)             Requested size: 205.88748pt x 128.00983pt.
+
+<images/App_cluster_profiles.png, id=31, 1169.36874pt x 647.41875pt>
+File: images/App_cluster_profiles.png Graphic file (type png)
+
+<use images/App_cluster_profiles.png>
+Package pdftex.def Info: images/App_cluster_profiles.png used on input line 445
+.
+(pdftex.def)             Requested size: 205.90945pt x 128.01938pt.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) detected at line 385
-[][]
- []
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 468.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
-
- []
+LaTeX Font Warning: Command \small invalid in math mode on input line 468.
 
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -930,35 +984,40 @@ Missing character: There is no ; in font nullfont!
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/bos_logo_sm.png> <./images/Intensity_call.png> <./images/Intensity_app.png> <
 ./images/graph_model.png> <./images/Call_3D.png> <./images/Call_2D.png> <./imag
-es/App_3D.png> <./images/App_2D.png> <./images/App_cluster_profiles.png> <./ima
-ges/Call_cluster_profiles.png>] (./Boston311_poster.aux) ) 
+es/App_3D.png> <./images/App_2D.png> <./images/post_pred.png> <./images/Call_cl
+uster_profiles.png> <./images/App_cluster_profiles.png>]
+(./Boston311_poster.aux) ) 
 Here is how much of TeX's memory you used:
- 15172 strings out of 493315
- 286172 string characters out of 6137904
- 531479 words of memory out of 5000000
- 18233 multiletter control sequences out of 15000+600000
- 40507 words of font info for 77 fonts, out of 8000000 for 9000
+ 16389 strings out of 493315
+ 306665 string characters out of 6137904
+ 548397 words of memory out of 5000000
+ 19427 multiletter control sequences out of 15000+600000
+ 43966 words of font info for 95 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,27n,70p,427b,977s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on Boston311_poster.pdf (1 page, 4027656 bytes).
+ 63i,18n,92p,757b,936s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmcsc10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
+msfonts/cmextra/cmex9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr5.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Boston311_poster.pdf (1 page, 4826625 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 50 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 
