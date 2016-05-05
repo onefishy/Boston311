@@ -16,6 +16,8 @@
     3. visualization of the posterior predictive
   Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
 
-<b>II. Write-up Directory</b>
+<b>II. Poster Directory</b>
   1. <i>Boston311 poster.pdf</i>: poster with overview of the project including select results
+
+<b>III. Write up Directory</b>
   2. <i>Boston311 paper.pdf</i>: summary, with details, of the methods and results as well as analysis.
