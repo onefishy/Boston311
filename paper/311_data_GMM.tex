@@ -174,7 +174,7 @@ Hence, the likelihood of the observations is
 \begin{align}
 L(\mathbf{X}) = \prod_{n=1}^N\prod_{k=1}^K \N(x_n| \mu_k, \Sigma_k)^{z_{nk}}.
 \end{align}
-The prior for $\pi$ is a Dirichlet distribution. For $\Sigma$, we use an inverse-Wishart prior, which is conjugate to the multivariate normal distribution and ensures the selection of a positive-definite matrix. The hyperparameters for the inverse-Wishart prior are the scale matrix $S_0$ and the degrees of freedom $\nu_0$.  These priors can be set to be weakly informative, which is useful because it is difficult to assess \textit{a priori} what the components in the 311 data are. In addition, conjugate priors facilitate the use of Gibbs sampling to explore the posterior distribution. 
+The prior for $\pi$ is a Dirichlet distribution. For $\Sigma$, we use an inverse-Wishart prior, which is conjugate to the multivariate normal distribution and ensures the selection of a positive-definite matrix. The hyperparameters for the inverse-Wishart prior are the scale matrix $S_0$ and the degrees of freedom $\nu_0$.  These priors can be set to be weakly informative, which is useful because it is difficult to assess \textit{a priori} what the components in the 311 data are. In addition, these priors allow closed forms of the conditional distributions to be used in Gibbs sampling to explore the posterior distribution. 
 
 To summarize, our model is described by the following: 
 \begin{align}
@@ -194,7 +194,12 @@ x_n | \mathbf{Z}, \mu, \Sigma &\sim \prod_{k=1}^K \N(\mu_k, \Sigma_k)^{z_{nk}}
 \end{figure}
 
 \subsection{Expectation maximization}
-\subsubsection{Simulated Annealing}
+\subsection{Simulated Annealing}
+
+To provide a reasonable initialization for the samplers, it is useful to obtain a maximum-likelihood estimate of the model parameters. Simulated annealing is one common approach.  Our state space consists of the mean vectors and covariance matrices for each clusters, and the objective function is the negative log-likelihood of observing the data given the present parameters. We minimize the objective function to find the maximum likelihood parameters.
+
+One important implementation decision is how to jump to a new state. For a cluster mean, we take the present estimate of the mean and add Gaussian noise distributed with a covariance matrix proportional to that of the cluster. For the cluster covariance matrix, we also add Gaussian noise with adjustable variance. However, since this noise may create an invalid covariance matrix, we must process the matrix to ensure that it remains symmetric and positive semi-definite by only modifying negative eigenvalues with some small positive epsilon and keeping the eigenvectors as unchanged as possible.
+
 \subsubsection{Gibbs sampling}
 For the Gibbs sampler, each iteration requires the following steps: 
 
@@ -239,9 +244,19 @@ One common issue with using Gaussian mixture models is known as the ``label-swit
 We use the MAP estimate obtained from expectation maximization to initialize the values of $\pi$, $\mu$, and $\Sigma$ for the Gibbs sampler. We then set $\alpha_0 = (1,1,1)$, $m_0 = (1,1,1)$, $\nu_0 = 3$ (the number of components in the mixture model), and $S_0$ and $V_0$ to the identity matrices to maintain weakly informative priors.   
 
 \section{Results}
+
 \subsection{Expectation maximization}
 Using the Bayesian Information Criterion [insert equation here], $K = 3$ was determined to be the optimal number of components to use to model the observations in the simulated annealing and Gibbs sampling analysis. 
 \subsection{Simulated annealing}
+Simulated annealing requires about 1000 iterations to converge, and takes longer to run even when using a smaller sub-sample (3000 observations) of the dataset compared to EM. As a point estimate method for a Gaussian mixture model, EM appears to be more efficient. Like EM, simulated annealing finds the requests dominated by a large cluster of requests 
+\begin{figure}
+\begin{center}\label{SAcluster}
+\includegraphics[width=70mm]{simulated_annealing_clustering}
+\caption{Cluster assignments for call data based on simulated annealing}
+\label{trace}
+\end{center}
+\end{figure}
+
 \subsection{Gibbs sampling}
 \begin{figure}
 \begin{center}
