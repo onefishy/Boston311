@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage{amssymb, amsmath, amsthm, amscd, wasysym, graphicx, subfigure, hyperref, bm}
+\usepackage{xy}
+\usepackage{color}
+\usepackage[procnames]{listings}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{pifont}
+
+\usepackage[skins]{tcolorbox}
+\usepackage{lipsum}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%                           Title                            %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{\textbf{\Large{Boston 311 Project README} }  }
+\author{Jane Huang, Isadora Nun, Weiwei Pan, Francisco Rivera}
+\date{}
+
+\addtolength{\hoffset}{-1.7cm}
+\addtolength{\voffset}{-0.2cm}
+\addtolength{\textwidth}{75pt}
+\addtolength{\textheight}{40pt}
+\addtolength{\headsep}{-5pt}
+\addtolength{\topmargin}{-0pt}
+
+
+
+\definecolor{keywords}{RGB}{200,0,200}
+\definecolor{comments}{RGB}{0,0,193}
+\definecolor{red}{RGB}{160,0,0}
+\definecolor{green}{RGB}{0,100,0}
+\definecolor{black}{RGB}{0,0,0}
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\G}{\mathcal{G}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\U}{\mathcal{U}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cO}{\mathcal{O}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\Exp}{\mathbb{E}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\bK}{\mathbb{K}}
+\newcommand{\bF}{\mathbb{F}}
+
+\newcommand{\fF}{\mathbf{F}}
+\newcommand{\fA}{\mathbf{A}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Mor}{\mathrm{Mor}}
+\newcommand{\Aut}{\mathrm{Aut}}
+\newcommand{\Gal}{\mathrm{Gal}}
+\newcommand{\Char}{\mathrm{char}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Span}{\mathrm{span}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Ext}{\mathrm{Ext}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\col}{\mathrm{col}}
+\newcommand{\argmax}{\mathrm{argmax}}
+\newcommand{\cone}{\mathrm{cone}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\RP}{\mathbb{R}\mathrm{P}}
+\newcommand{\tr}{\mathrm{tr}}
+
+\newcommand{\df}{\overset{\text{def}}{=}}
+%\newcommand{\deg}{\mathrm{deg}}
+
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\vu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\va}{\mathbf{a}}
+\newcommand{\vb}{\mathbf{b}}
+\newcommand{\vc}{\mathbf{c}}
+\newcommand{\vd}{\mathbf{d}}
+\newcommand{\vg}{\mathbf{g}}
+\newcommand{\vk}{\mathbf{k}}
+\newcommand{\vw}{\mathbf{w}}
+\newcommand{\vz}{\mathbf{z}}
+\newcommand{\vp}{\mathbf{p}}
+\newcommand{\vq}{\mathbf{q}}
+\newcommand{\vS}{\mathbf{S}}
+\newcommand{\vf}{\mathbf{f}}
+\newcommand{\bo}{\mathbf{1}}
+\newcommand{\bz}{\mathbf{0}}
+\newcommand{\id}{\mathrm{id}}
+
+\theoremstyle{theorem}
+\newtheorem{thm}{Theorem}
+
+\theoremstyle{theorem}
+\newtheorem{prop}{Proposition}
+\theoremstyle{theorem}
+\newtheorem{cor}{Corollary}
+
+\theoremstyle{lemma}
+\newtheorem{lemma}{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+
+\theoremstyle{example}
+\newtheorem{ex}{Example}
+
+
+\addtolength{\hoffset}{-1.0cm}
+\addtolength{\voffset}{-1.0cm}
+\addtolength{\textwidth}{90pt}
+\addtolength{\textheight}{100pt}
+\addtolength{\headsep}{-19pt}
+\addtolength{\topmargin}{-22pt}
+
+\begin{document}
+\maketitle
+\input xy
+\xyoption{all}
+\xyoption{arc}
+
+\section{Project Files}
+\begin{enumerate}
+\item $\texttt{Code}$ Directory
+\begin{enumerate}
+\item File $\texttt{Reading in Data.ipynb}$: reads the 311 data into a $\texttt{pandas}$ data frame. Supports basic exploration of the entire set of 311 data.
+\item File $\texttt{Basic Analysis of Data.ipynb}$: provides rudimentary visualization and analysis of closed requests generated in the year of 2015. Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
+\item File $\texttt{Simulated Annealing.ipynb}$: provides maximum likelihood estimations of the mixture model parameters through simulated annealing. Includes convergence analysis and visualizations of hard clusterings of the data based on mixture parameter estimates. Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
+\item File $\texttt{EM for MLE and MAP.ipynb}$: provides maximum likelihood and maximum a posteriori estimates of the mixture model parameters through expectation maximization. Includes:
+\begin{itemize}
+\item performance testing on synthetic data
+\item model selection for the number of mixture components using Bayesian information criterion
+\item convergence analysis on real data
+\item hard clustering of the data based on MAP mixture parameter estimates
+\item cluster profile analysis
+\end{itemize}
+Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
+\end{enumerate}
+\item $\texttt{Paper}$ Directory
+\begin{enumerate}
+\item File $\texttt{Boston311\_poster.pdf}$: poster with overview of the project including select results
+\item File $\texttt{Boston311\_paper.pdf}$: summary, with details, of the methods and results as well as analysis. 
+\end{enumerate}
+\item File $\texttt{Boston311\_screen\_cast.mp4}$: 2 minute screen-cast with brief overview of the project including select results.
+\end{enumerate}
+
+\section{Downloading the Data}
+The Boston 311 dataset ($\texttt{.csv}$ formatted) can be downloaded at
+\begin{center}
+https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52
+\end{center}
+The data is $\mathtt{360MB}$ in size.
+\section{Running the $\texttt{ipython}$ Notebooks}
+Each $\texttt{ipython}$ notebook can be run independently and each requires initially reading and processing the 311 dataset (a process requiring approximately $\mathtt{300}$ seconds). The notebooks include section headers, expository narrative and comments throughout to facilitate exploration. 
+
+\end{document}
