@@ -5,12 +5,12 @@ var margin = {top: 0, right: 20, bottom: 30, left: 50},
 
 
 // Create SVG
-var svg = d3.select("#map")
+var svg2 = d3.select("#map2")
     .append( "svg" )
     .attr( "width", width + margin.left + margin.right )
     .attr( "height", height + margin.top + margin.bottom );
 
-var g = svg.append( "g" );
+var g2 = svg2.append( "g" );
 
 // Set Projection Parameters
 var albersProjection = d3.geo.albers()
@@ -33,8 +33,7 @@ var tip = d3.tip()
         return "<span class ='toolTipHead'><b> " + name + "</b><br/>"
     })
 
-
-var tip3 = d3.tip()
+var tip2 = d3.tip()
     .attr('class', 'd3-tip')
     .offset([100, 0])
     .html(function (d) {
@@ -47,30 +46,27 @@ var tip3 = d3.tip()
     })
 
 svg2.call(tip);
-svg2.call(tip3);
-
+svg2.call(tip2);
 
 
 
 queue()
     .defer(d3.json, "data/neighborhoods_json.json")
     //.defer(d3.json, "data/d3_boston311_3K.json")
-    .defer(d3.json, "data/clusters_calls.json")
-    .await(function(error, data, clusters) {
+    .defer(d3.json, "data/clusters_apps.json")
+    .await(function(error, data, clusters2) {
 
 //d3.json("data/neighborhoods_json.json", function(error, data) {
 //    console.log(data.features)
 //    console.log(clusters)
-    g.selectAll( "path" )
+    g2.selectAll( "path" )
         .data( data.features )
         .enter()
         .append( "path" )
         .attr( "fill", "#ccc" )
         .attr( "stroke", "#333")
         .attr( "d", geoPath )
-        //.on("mouseout", function(d){
-        //console.log(d.properties.Name)
-        //})
+
         .on("mouseover", function (d) {
             tip.show(d)
 
@@ -83,8 +79,8 @@ queue()
         //console.log(data.features)
 
 
-        g.selectAll("circle")
-            .data(clusters)
+        g2.selectAll("circle")
+            .data(clusters2)
             .enter()
             .append("circle")
             .attr("cx", function(d) {
@@ -101,16 +97,15 @@ queue()
 
             .style("opacity",0.7)
             .on("mouseover", function (d) {
-                tip3.show(d)
+                tip2.show(d)
 
             })
             .on("mouseout", function () {
-                tip3.hide()
+                tip2.hide()
 
             });
 
-
-    })
+})
 
 colors = ['#63ffc4 ','#0096b2 ','#ff7500 ']
 
