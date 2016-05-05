@@ -21,32 +21,50 @@
 \citation{newurbanmechanics}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Data}{1}{section.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{1}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Bayesian Gaussian Mixture Models}{1}{subsection.3.1}}
+\citation{Gelman}
+\citation{Jones}
+\citation{Bishop}
+\citation{Biernacki}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Diagram of Gaussian mixture model\relax }}{2}{figure.caption.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Methods}{2}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Bayesian Gaussian Mixture Models}{2}{subsection.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Expectation maximization and model selection}{2}{subsection.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Model Selection Using BIC Scores\relax }}{2}{figure.caption.2}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:bic}{{\caption@xref {fig:bic}{ on input line 198}}{2}{Expectation maximization and model selection}{figure.caption.2}{}}
+\citation{Bishop}
 \citation{Gelman}
 \citation{Jones}
 \citation{Gelman}
 \citation{Stephens}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Expectation maximization}{2}{subsection.3.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Simulated Annealing}{2}{subsubsection.3.2.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Gibbs sampling}{2}{subsubsection.3.2.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces NEED TO UPDATE THIS FIGURE TO USE SIGMA INSTEAD OF GAMMA\relax }}{2}{figure.caption.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Simulated Annealing}{3}{subsection.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Gibbs sampling}{3}{subsection.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces EM MAP label assignments\relax }}{4}{figure.caption.3}}
+\newlabel{EMlabels}{{3}{4}{EM MAP label assignments\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{4}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Expectation maximization}{4}{subsection.4.1}}
+\newlabel{SAcluster}{{\caption@xref {SAcluster}{ on input line 284}}{4}{Simulated annealing}{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Cluster assignments for call data based on simulated annealing\relax }}{4}{figure.caption.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Simulated annealing}{4}{subsection.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Gibbs sampling}{4}{subsection.4.3}}
 \bibstyle{abbrv}
 \bibdata{GMMBib}
-\bibcite{newurbanmechanics}{1}
-\bibcite{walshpressrelease}{2}
-\bibcite{Gelman}{3}
-\bibcite{Jones}{4}
-\bibcite{Stephens}{5}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Gibbs sampler traces for the $\pi $ parameter\relax }}{3}{figure.caption.2}}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{trace}{{2}{3}{Gibbs sampler traces for the $\pi $ parameter\relax }{figure.caption.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Results}{3}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Expectation maximization}{3}{subsection.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Simulated annealing}{3}{subsection.4.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Gibbs sampling}{3}{subsection.4.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Posterior predictive}{3}{subsection.4.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Comparing results from different methods}{3}{subsection.4.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{3}{section.5}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Gibbs results\relax }}{4}{table.caption.3}}
-\newlabel{comparison}{{1}{4}{Gibbs results\relax }{table.caption.3}{}}
+\bibcite{Biernacki}{1}
+\bibcite{Bishop}{2}
+\bibcite{newurbanmechanics}{3}
+\bibcite{walshpressrelease}{4}
+\bibcite{Gelman}{5}
+\bibcite{Jones}{6}
+\bibcite{Stephens}{7}
+\newlabel{comparison}{{\caption@xref {comparison}{ on input line 305}}{5}{Gibbs sampling}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Gibbs estimates for $\pi $ and $\mu $. $\mu $ vector listed in order of (response time, longitude, latitude) in units of days and decimal degrees. Means and uncertainties for covariance matrices from Gibbs sampling are listed in the IPython notebooks due to space constraints here.\relax }}{5}{table.caption.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Posterior predictive}{5}{subsection.4.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Conclusion}{5}{section.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Gibbs component assignments and posterior predictive distributions\relax }}{6}{figure.caption.5}}
+\newlabel{gibbsclusters}{{5}{6}{Gibbs component assignments and posterior predictive distributions\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gibbs sampler traces for the $\pi $ parameter\relax }}{6}{figure.caption.7}}
+\newlabel{trace}{{6}{6}{Gibbs sampler traces for the $\pi $ parameter\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Department breakdown of clusters\relax }}{6}{figure.caption.8}}
+\newlabel{fig:conv}{{\caption@xref {fig:conv}{ on input line 363}}{6}{Conclusion}{subfigure.8.2}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {MAP Clustering (Call Data)}}}{6}{subfigure.8.2}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {MAP Clustering (App Data)}}}{6}{subfigure.8.2}}

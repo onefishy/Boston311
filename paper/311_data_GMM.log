@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  4 MAY 2016 01:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 MAY 2016 12:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -317,16 +317,11 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count120
-\c@subtable=\count121
-)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/blkarray/blkarray.sty
 Package: blkarray 2015/02/27 v0.07 Block array (dpc)
-\c@BAenumi=\count122
-\BA@col=\count123
-\BA@block@cnt=\count124
+\c@BAenumi=\count120
+\BA@col=\count121
+\BA@block@cnt=\count122
 \BA@final@box=\box32
 \BA@first@box=\box33
 \BA@colsep=\dimen125
@@ -397,14 +392,14 @@ Loading kernel: messages; fonts; allocations: state,
  direction,
 \d@X=\dimen154
 \d@Y=\dimen155
-\K@=\count125
-\KK@=\count126
-\Direction=\count127
+\K@=\count123
+\KK@=\count124
+\Direction=\count125
 \K@dXdY=\dimen156
 \K@dYdX=\dimen157
 \xyread@=\read1
 \xywrite@=\write3
-\csp@=\count128
+\csp@=\count126
 \quotPTK@=\dimen158
 
 utility macros; pictures: \xy, positions,
@@ -425,7 +420,7 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: All features v.3.8
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xycurve.tex
  Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count129
+\crv@cnt@=\count127
 \crvpts@=\toks34
 \splinebox@=\box39
 \splineval@=\dimen159
@@ -447,13 +442,13 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
  Xy-pic option: Colour extension v.3.11 loaded)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xymatrix.tex
  Xy-pic option: Matrix feature v.3.14
-\Row=\count130
-\Col=\count131
+\Row=\count128
+\Col=\count129
 \queue@=\toks35
 \queue@@=\toks36
-\qcount@=\count132
-\qcount@@=\count133
-\matrixsize@=\count134
+\qcount@=\count130
+\qcount@@=\count131
+\matrixsize@=\count132
  loaded)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
@@ -470,47 +465,81 @@ Xy-pic pdf driver: `line' extension support
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded)
 Xy-pic pdf driver: `rotate' extension support
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded)
-loaded))
+loaded)) (/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip63
+\subfigcapskip=\skip64
+\subfigcaptopadj=\dimen165
+\subfigbottomskip=\skip65
+\subfigcapmargin=\dimen166
+\subfiglabelskip=\skip66
+\c@subfigure=\count133
+\c@lofdepth=\count134
+\c@subtable=\count135
+\c@lotdepth=\count136
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 88.
-
-\c@thm=\count135
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip67
+\subfig@bottom=\skip68
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count137
+\Gm@cntv=\count138
+\c@Gm@tempcnt=\count139
+\Gm@bindingoffset=\dimen167
+\Gm@wd@mp=\dimen168
+\Gm@odd@mp=\dimen169
+\Gm@even@mp=\dimen170
+\Gm@layoutwidth=\dimen171
+\Gm@layoutheight=\dimen172
+\Gm@layouthoffset=\dimen173
+\Gm@layoutvoffset=\dimen174
+\Gm@dimlist=\toks37
+)
 
 Package amsthm Warning: Unknown theoremstyle `theorem' on input line 91.
 
-\c@prop=\count136
+\c@thm=\count140
 
-Package amsthm Warning: Unknown theoremstyle `theorem' on input line 93.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 94.
 
-\c@cor=\count137
+\c@prop=\count141
 
-Package amsthm Warning: Unknown theoremstyle `lemma' on input line 96.
+Package amsthm Warning: Unknown theoremstyle `theorem' on input line 96.
 
-\c@lemma=\count138
-\c@defn=\count139
+\c@cor=\count142
 
-Package amsthm Warning: Unknown theoremstyle `example' on input line 102.
+Package amsthm Warning: Unknown theoremstyle `lemma' on input line 99.
 
-\c@ex=\count140
+\c@lemma=\count143
+\c@defn=\count144
+
+Package amsthm Warning: Unknown theoremstyle `example' on input line 105.
+
+\c@ex=\count145
 (./311_data_GMM.aux)
 \openout1 = `311_data_GMM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 117.
+LaTeX Font Info:    ... okay on input line 117.
 \AtBeginShipoutBox=\box40
-Package hyperref Info: Link coloring OFF on input line 114.
+Package hyperref Info: Link coloring OFF on input line 117.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -518,11 +547,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count141
+\c@section@level=\count146
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 117.
+LaTeX Info: Redefining \pageref on input line 117.
+LaTeX Info: Redefining \nameref on input line 117.
 
 (./311_data_GMM.out) (./311_data_GMM.out)
 \@outlinefile=\write4
@@ -531,17 +560,17 @@ LaTeX Info: Redefining \nameref on input line 114.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count142
-\scratchdimen=\dimen165
+\scratchcounter=\count147
+\scratchdimen=\dimen175
 \scratchbox=\box41
-\nofMPsegments=\count143
-\nofMParguments=\count144
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count145
-\MPscratchDim=\dimen166
-\MPnumerator=\count146
-\makeMPintoPDFobject=\count147
-\everyMPtoPDFconversion=\toks38
+\nofMPsegments=\count148
+\nofMParguments=\count149
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count150
+\MPscratchDim=\dimen176
+\MPnumerator=\count151
+\makeMPintoPDFobject=\count152
+\everyMPtoPDFconversion=\toks39
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -558,18 +587,53 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 114.
+LaTeX Font Info:    Try loading font information for U+msa on input line 117.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 114.
+LaTeX Font Info:    Try loading font information for U+msb on input line 117.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.39998pt on input line 114.
+Package xypdf Info: Line width: 0.39998pt on input line 117.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
+* v-part:(T,H,B)=(57.81621pt, 679.33757pt, 57.81621pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=498.66258pt
+* \textheight=679.33757pt
+* \oddsidemargin=-14.45378pt
+* \evensidemargin=-14.45378pt
+* \topmargin=-39.45378pt
+* \headheight=10.0pt
+* \headsep=15.0pt
+* \topskip=10.0pt
+* \footskip=0.0pt
+* \marginparwidth=121.0pt
+* \marginparsep=11.0pt
+* \columnsep=18.06749pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xy.tex not reloaded)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xyall.tex
@@ -577,19 +641,30 @@ Package xypdf Info: Line width: 0.39998pt on input line 114.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/xypic/xyarc.tex
  Xy-pic option: Circle, Ellipse, Arc feature v.3.8 circles, ellipses,
 elliptical arcs, loaded)
-Underfull \hbox (badness 4479) in paragraph at lines 157--158
+Underfull \hbox (badness 6859) in paragraph at lines 156--157
 \OT1/cmr/m/n/10 Records of Boston's 311 ser-vice re-quests were
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 \OT1/cmr/m/n/10 ob-tained from []$\OT1/cmtt/m/n/10 https : / / data . cityofbos
 ton .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 \OT1/cmtt/m/n/10 gov / City-[]Services / 311-[]Service-[]Requests /
+ []
+
+
+Underfull \hbox (badness 4441) in paragraph at lines 156--157
+\OT1/cmtt/m/n/10 awu8-[]dc52Opensinnewwindow$[]\OT1/cmr/m/n/10 . We first se-le
+cted
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 156--157
+\OT1/cmr/m/n/10 were sub-se-quently split apart into two sets based
  []
 
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -597,74 +672,192 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
 
 ]
-<graph_model.png, id=87, 247.8861pt x 165.2574pt>
-File: graph_model.png Graphic file (type png)
- <use graph_model.png>
-Package pdftex.def Info: graph_model.png used on input line 191.
-(pdftex.def)             Requested size: 142.26378pt x 94.84573pt.
+<graph_model.pdf, id=78, 977.23364pt x 645.8776pt>
+File: graph_model.pdf Graphic file (type pdf)
+ <use graph_model.pdf>
+Package pdftex.def Info: graph_model.pdf used on input line 163.
+(pdftex.def)             Requested size: 142.26378pt x 94.01942pt.
 
-[2 <./graph_model.png>] <calldatapitrace.png, id=118, 394.47375pt x 397.485pt>
+<Call_bic.pdf, id=81, 504.5534pt x 393.40114pt>
+File: Call_bic.pdf Graphic file (type pdf)
+ <use Call_bic.pdf>
+Package pdftex.def Info: Call_bic.pdf used on input line 195.
+(pdftex.def)             Requested size: 170.71652pt x 133.10631pt.
+
+<App_bic.pdf, id=82, 507.8975pt x 393.55042pt>
+File: App_bic.pdf Graphic file (type pdf)
+ <use App_bic.pdf>
+Package pdftex.def Info: App_bic.pdf used on input line 196.
+(pdftex.def)             Requested size: 170.71652pt x 132.28008pt.
+ [2 <./graph_model.pdf> <./Call_bic.pdf> <./App_bic.pdf>]
+
+Package caption Warning: \label without proper \caption on input line 198.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:bic' on page 3 undefined on input line 217.
+
+[3] <3D_call.png, id=209, 656.95438pt x 556.57938pt>
+File: 3D_call.png Graphic file (type png)
+ <use 3D_call.png>
+Package pdftex.def Info: 3D_call.png used on input line 274.
+(pdftex.def)             Requested size: 170.71652pt x 144.63078pt.
+
+<3D_app.png, id=211, 599.23875pt x 553.56813pt>
+File: 3D_app.png Graphic file (type png)
+ <use 3D_app.png>
+Package pdftex.def Info: 3D_app.png used on input line 275.
+(pdftex.def)             Requested size: 170.71652pt x 157.70097pt.
+
+<simulated_annealing_clustering.pdf, id=213, 466.3221pt x 268.74815pt>
+File: simulated_annealing_clustering.pdf Graphic file (type pdf)
+
+<use simulated_annealing_clustering.pdf>
+Package pdftex.def Info: simulated_annealing_clustering.pdf used on input line 
+285.
+(pdftex.def)             Requested size: 199.16928pt x 114.7844pt.
+
+Underfull \vbox (badness 1783) has occurred while \output is active []
+
+
+<gibbscallclusterassignments.png, id=214, 515.9275pt x 543.02875pt>
+File: gibbscallclusterassignments.png Graphic file (type png)
+
+<use gibbscallclusterassignments.png>
+Package pdftex.def Info: gibbscallclusterassignments.png used on input line 293
+.
+(pdftex.def)             Requested size: 156.49014pt x 164.70792pt.
+
+<gibbsappclusterassignments.png, id=215, 428.60126pt x 442.65375pt>
+File: gibbsappclusterassignments.png Graphic file (type png)
+
+<use gibbsappclusterassignments.png>
+Package pdftex.def Info: gibbsappclusterassignments.png used on input line 294.
+
+(pdftex.def)             Requested size: 156.49014pt x 161.61792pt.
+
+<callposteriorpredictive.png, id=216, 418.56375pt x 439.6425pt>
+File: callposteriorpredictive.png Graphic file (type png)
+
+<use callposteriorpredictive.png>
+Package pdftex.def Info: callposteriorpredictive.png used on input line 295.
+(pdftex.def)             Requested size: 156.49014pt x 164.36911pt.
+
+<appposteriorpredictive.png, id=217, 420.57124pt x 445.665pt>
+File: appposteriorpredictive.png Graphic file (type png)
+
+<use appposteriorpredictive.png>
+Package pdftex.def Info: appposteriorpredictive.png used on input line 296.
+(pdftex.def)             Requested size: 156.49014pt x 165.8251pt.
+
+
+LaTeX Warning: Float too large for page by 19.18248pt on input line 300.
+
+
+Overfull \hbox (38.36583pt too wide) in paragraph at lines 307--333
+ [] 
+ []
+
+[4 <./3D_call.png> <./3D_app.png> <./simulated_annealing_clustering.pdf>]
+<calldatapitrace.png, id=1926, 394.47375pt x 397.485pt>
 File: calldatapitrace.png Graphic file (type png)
 
 <use calldatapitrace.png>
-Package pdftex.def Info: calldatapitrace.png used on input line 248.
+Package pdftex.def Info: calldatapitrace.png used on input line 346.
 (pdftex.def)             Requested size: 170.71652pt x 172.01906pt.
 
-<appdatapitrace.png, id=119, 394.47375pt x 397.485pt>
+<appdatapitrace.png, id=1927, 394.47375pt x 397.485pt>
 File: appdatapitrace.png Graphic file (type png)
- <use appdatapitrace.png>
-Package pdftex.def Info: appdatapitrace.png used on input line 249.
+
+<use appdatapitrace.png>
+Package pdftex.def Info: appdatapitrace.png used on input line 347.
 (pdftex.def)             Requested size: 170.71652pt x 172.01906pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<profile_call.png, id=1929, 2849.64626pt x 1255.69125pt>
+File: profile_call.png Graphic file (type png)
+
+<use profile_call.png>
+Package pdftex.def Info: profile_call.png used on input line 360.
+(pdftex.def)             Requested size: 245.3257pt x 108.12047pt.
+ <profile_app.png, id=1930, 1169.36874pt x 647.41875pt>
+File: profile_app.png Graphic file (type png)
+
+<use profile_app.png>
+Package pdftex.def Info: profile_app.png used on input line 362.
+(pdftex.def)             Requested size: 195.27496pt x 108.12047pt.
+
+Overfull \hbox (5.02815pt too wide) in paragraph at lines 360--363
+ [] 
+ []
 
 
+Package caption Warning: \label without proper \caption on input line 363.
+See the caption package documentation for explanation.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Warning: Reference `fig:conv' on page 5 undefined on input line 369.
 
 (./311_data_GMM.bbl
-Underfull \hbox (badness 3179) in paragraph at lines 9--13
+Underfull \hbox (badness 1077) in paragraph at lines 19--23
+[]\OT1/cmr/m/n/10 City of Boston Mayor's Of-fice.  Mayor Walsh
+ []
+
+
+Underfull \hbox (badness 4726) in paragraph at lines 19--23
 \OT1/cmr/m/n/10 Launches Boston 311.  Press Re-lease, Au-
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
- [3 <./calldatapitrace.png> <./appdatapitrace.png>] [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
- (./311_data_GMM.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 375.
+ [5] [6 <./gibbscallclusterassignments.png> <./gibbsappclusterassignments.png> 
+<./callposteriorpredictive.png> <./appposteriorpredictive.png> <./calldatapitra
+ce.png> <./appdatapitrace.png> <./profile_call.png> <./profile_app.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 375.
+
+(./311_data_GMM.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 375.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 375.
 Package rerunfilecheck Info: File `311_data_GMM.out' has not changed.
-(rerunfilecheck)             Checksum: EE8900F9A8C7CDA8542799978DB44E4C;887.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
+(rerunfilecheck)             Checksum: C4122DFCF0AFF21674A51C2E5A4CF669;797.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 375.
  ) 
 Here is how much of TeX's memory you used:
- 11368 strings out of 493089
- 158805 string characters out of 6134842
- 308934 words of memory out of 5000000
- 14631 multiletter control sequences out of 15000+600000
+ 11979 strings out of 493089
+ 167970 string characters out of 6134842
+ 322943 words of memory out of 5000000
+ 15209 multiletter control sequences out of 15000+600000
  12849 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,45p,3243b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on 311_data_GMM.pdf (4 pages, 302883 bytes).
+ 36i,19n,45p,3245b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{figure.caption.6} has been referenced but does no
+t exist, replaced by a fixed one
+
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 311_data_GMM.pdf (6 pages, 2138393 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 172 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2022 PDF objects out of 2073 (max. 8388607)
+ 1932 compressed objects within 20 object streams
+ 57 named destinations out of 1000 (max. 500000)
+ 175 words of extra memory for PDF output out of 10000 (max. 10000000)
 

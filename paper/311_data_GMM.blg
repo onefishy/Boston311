@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 311_data_GMM.aux
 The style file: abbrv.bst
 Database file #1: GMMBib.bib
-You've used 5 entries,
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            528 strings with 4369 characters,
-and the built_in function-call counts, 1288 in all, are:
-= -- 120
-> -- 57
+            542 strings with 4580 characters,
+and the built_in function-call counts, 1811 in all, are:
+= -- 171
+> -- 77
 < -- 0
-+ -- 23
-- -- 18
-* -- 66
-:= -- 225
-add.period$ -- 16
-call.type$ -- 5
-change.case$ -- 24
++ -- 31
+- -- 24
+* -- 96
+:= -- 316
+add.period$ -- 22
+call.type$ -- 7
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 44
-empty$ -- 115
-format.name$ -- 18
-if$ -- 271
+cite$ -- 7
+duplicate$ -- 67
+empty$ -- 161
+format.name$ -- 24
+if$ -- 382
 int.to.chr$ -- 0
-int.to.str$ -- 5
-missing$ -- 3
-newline$ -- 29
-num.names$ -- 10
-pop$ -- 40
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 39
+num.names$ -- 14
+pop$ -- 50
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 26
 quote$ -- 0
-skip$ -- 33
+skip$ -- 47
 stack$ -- 0
-substring$ -- 46
-swap$ -- 5
+substring$ -- 71
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
+type$ -- 24
 warning$ -- 0
-while$ -- 11
-width$ -- 6
-write$ -- 55
+while$ -- 16
+width$ -- 8
+write$ -- 77

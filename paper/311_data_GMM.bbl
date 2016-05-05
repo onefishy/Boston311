@@ -1,5 +1,15 @@
 \begin{thebibliography}{1}
 
+\bibitem{Biernacki}
+C.~Biernacki and G.~Govaert.
+\newblock Choosing models in model-based clustering and discriminant analysis.
+\newblock {\em J. R. Statist. Soc. B}, 64:49--71, 1999.
+
+\bibitem{Bishop}
+C.~M. Bishop.
+\newblock {\em Pattern Recognition and Machine Learning}.
+\newblock Springer, 1st edition, 2006.
+
 \bibitem{newurbanmechanics}
 {Boston's Mayor's Office of New Urban Mechanics}.
 \newblock {Citizens Connect}.
