@@ -1,0 +1,101 @@
+
+
+/**** ADD YOUR STYLES ****/
+
+
+/****************/
+/*   BAR-CHART  */
+/****************/
+
+body{
+  margin-left: 20px;
+}
+.row{
+  /*font-family: Gill Sans, Verdana;*/
+  font-family: cursive;
+}
+
+h1{
+  font-size: 24px;
+  text-align: center;
+  color: #666666;
+}
+
+.bar {
+  fill: #3C948B;
+}
+
+.bar:hover {
+  fill: #327972;
+}
+
+.axis {
+  font-size: 11px;
+  stroke-width: 2px;
+  fill: #666666;
+
+}
+
+.axis line {
+  fill: none;
+  stroke:#666666;
+  shape-rendering: crispEdges;
+}
+.domain {
+  fill: none;
+  stroke: #666666;
+  shape-rendering: crispEdges;
+}
+
+#chart-area{
+  fill: none;
+}
+
+.area{
+  stroke:#999967;
+  stroke-width: 2px;
+
+}
+#chart-area text {
+  font-size: 11px;
+  fill:#666666;
+}
+
+.axis-label {
+  fill: #888;
+  font-size: 10px;
+}
+
+.textlabel{
+  fill:  #8B907C;
+}
+
+.d3-tip {
+  line-height: 1.5;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border-radius: 4px;
+}
+
+.toolTipHead {
+  font-size: 14px;
+}
+
+.toolTipRank {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
+
+.toolTipBody {
+  font-size: 13px;
+}
+
+.legend{
+  font-size: 10px;
+}
+
+/*#map2{*/
+  /*margin-left: 100px;*/
+/*}*/
