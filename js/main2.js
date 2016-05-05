@@ -7,7 +7,7 @@ var selection="TYPE"
 var features;
 var ls_w
 var ls_h
-
+var point_clusters
 // Create SVG
 var svg2 = d3.select("#map2")
     .append( "svg" )
@@ -43,11 +43,11 @@ svg2.call(tip);
 queue()
     .defer(d3.json, "data/neighborhoods_json.json")
     .defer(d3.json, "data/unclustered.json")
-    .await(function(error, data, clusters) {
+    .defer(d3.json, "data/d3_boston311_3K.json")
 
-//d3.json("data/neighborhoods_json.json", function(error, data) {
-//    console.log(data.features)
-//    console.log(clusters)
+
+    .await(function(error, data, data_info, clusters) {
+
 
         g2.selectAll("path")
             .data(data.features)
@@ -74,16 +74,22 @@ queue()
         var unique = []
         var count = 0;
 
-        clusters.forEach(function (d) {
+        data_info.forEach(function (d) {
             if (unique.indexOf(d[selection]) === -1) {
                 unique.push(d[selection])
                 count = count + 1;
             }
         });
 
+        point_clusters = []
+        clusters.forEach(function (d) {
+
+            point_clusters.push(d.cluster)
+        });
+
 
         g2.selectAll("circle")
-            .data(clusters)
+            .data(data_info)
             .enter()
             .append("circle")
             .attr("cx", function (d) {
@@ -98,7 +104,11 @@ queue()
                 return colorbrewer.Set4[12][idx]
             })
 
-            .style("opacity", 0.7);
+            .style("opacity", 0.7)
+            //.style("stroke", function(d,i){
+            //    return colorbrewer.Set1[4][ point_clusters[i]]
+            //})
+            //.style("stroke-width", 2)
 
 
         var legend = svg2.selectAll("g.legend")
@@ -114,7 +124,7 @@ queue()
 
         legend.append("text")
 
-        features = clusters;
+        features = data_info;
 
         updateMap()
     });
@@ -169,7 +179,6 @@ function updateMap() {
     legendBox
         .attr("x", 10)
         .attr("y", function(d, i){
-            console.log(height - (i*ls_h) - 2*ls_h)
             return (i*ls_h) + 2*ls_h;})
         .attr("width", ls_w)
         .attr("height", ls_h)
