@@ -72,15 +72,15 @@ queue()
             .enter()
             .append("circle")
             .attr("cx", function(d) {
-                return albersProjection([d.longitude, d.latitude])[0];
+                return albersProjection([d.LONGITUDE, d.LATITUDE])[0];
             })
             .attr("cy", function(d) {
-                return albersProjection([d.longitude, d.latitude])[1];
+                return albersProjection([d.LONGITUDE, d.LATITUDE])[1];
             })
             .attr("r", 5)
             .style("fill", function(d){
 
-                    return colorbrewer.Set1[4][ d.cluster]
+                    return colorbrewer.Set1[4][ d.Cluster]
                 })
 
             .style("opacity",0.7);
