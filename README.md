@@ -1,7 +1,5 @@
 # Boston311
 
-# Boston311
-
 <b>I. Code Directory</b>
   1. <i>Reading in Data.ipynb</i>: reads the 311 data into a pandas data frame. Supports basic exploration of the entire set of 311 data.
   2. <i>Basic Analysis of Data.ipynb</i>: provides rudimentary visualization and analysis of closed requests generated in the year of 2015. Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
@@ -14,9 +12,17 @@
     4. cluster profile analysis
   
   Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
-  5. <i>Gibbs Sampler for GMM.ipynb</i>: provides Gibbs sampling from the posterior distribution of the mix- ture model. Including:
+  5. <i>sampling_final.ipynb</i>: provides Gibbs sampling from the posterior distribution of the mix- ture model. Including:
     1. convergence analysis
     2. hard clustering of the data based on posterior mean estimates of the mixture parameters
     3. visualization of the posterior predictive
   
   Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
+  
+  This notebook also ran the PyMC implementation of the Gaussian mixture model (not converged) and examined alternative modeling of response times only. 
+
+<b>II. Poster Directory</b>
+  1. <i>Boston311 poster.pdf</i>: poster with overview of the project including select results
+
+<b>III. Write up Directory</b>
+  2. <i>Boston311 paper.pdf</i>: summary, with details, of the methods and results as well as analysis.
