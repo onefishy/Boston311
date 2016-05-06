@@ -12,12 +12,14 @@
     4. cluster profile analysis
   
   Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
-  5. <i>Gibbs Sampler for GMM.ipynb</i>: provides Gibbs sampling from the posterior distribution of the mix- ture model. Including:
+  5. <i>sampling_final.ipynb</i>: provides Gibbs sampling from the posterior distribution of the mix- ture model. Including:
     1. convergence analysis
     2. hard clustering of the data based on posterior mean estimates of the mixture parameters
     3. visualization of the posterior predictive
   
   Contrast and comparison between requests originating from call data and Citizens Connect App data is emphasized throughout.
+  
+  This notebook also ran the PyMC implementation of the Gaussian mixture model (not converged) and examined alternative modeling of response times only. 
 
 <b>II. Poster Directory</b>
   1. <i>Boston311 poster.pdf</i>: poster with overview of the project including select results

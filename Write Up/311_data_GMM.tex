@@ -153,9 +153,9 @@ Traditionally, requests for city non-emergency services have been made through p
 
 To assess the extent to which the 311 app may facilitate more efficient responses to populations not as well-served through the traditional mode of contacting non-emergency services, we seek to model and compare the joint distribution of response times and locations for 311 requests made via constituent calls and those made via the mobile phone app. Because we are interested in identifying whether there are hidden sub-populations of requests that are distinguishable by the observed locations and response times, we use Gaussian mixture models to approximate the distributions. 
 \section{Data}
-Records of Boston's 311 service requests were obtained from \url{https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52Opens in new window}. We first selected all closed complaints that had been opened in 2015 through constituent calls or the Citizens Connect App. The descriptors extracted for the data included the times that the complaints were opened and closed by the city (reported to the nearest second) and the longitude and latitude of the source of the complaint. A new variable, response time, was defined as the difference between the reported closing and opening times of a 311 complaint. Because the numerical scale of response times is much larger than those of longitude and latitude, the values for each variable were rescaled to have zero mean and unit variance. (The mean response time is 13.2 days with standard deviation 29.1 days. The mean latitude is 42.326 with standard deviation 0.034. The mean longitude is -71.083 with standard deviation 0.035.) The data were subsequently split apart into two sets based on whether they originated from constituent calls or Citizens Connect. 
+Records of Boston's 311 service requests were obtained from \url{https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52}. We first selected all closed complaints that had been opened in 2015 through constituent calls or the Citizens Connect App. The descriptors extracted for the data included the times that the complaints were opened and closed by the city (reported to the nearest second) and the longitude and latitude of the source of the complaint. A new variable, response time, was defined as the difference between the reported closing and opening times of a 311 complaint. Because the numerical scale of response times is much larger than those of longitude and latitude, the values for each variable were rescaled to have zero mean and unit variance. (The mean response time is 13.2 days with standard deviation 29.1 days. The mean latitude is 42.326 with standard deviation 0.034. The mean longitude is -71.083 with standard deviation 0.035.) The data were subsequently split apart into two sets based on whether they originated from constituent calls or Citizens Connect. 
 
-Since the dataset is very large, a randomly selected subsample was used for the analysis to reduce computational expense. For the expectation maximization estimates, the data were downsampled to provide $\sim20,000$ points each for constituent call and Citizens Connect App analysis. For Gibbs sampling, the data were downsampled to provide $\sim10,000$ points for each group. 
+Since the dataset is very large, a randomly selected subsample was used for the analysis to reduce computational expense. For the expectation maximization estimates, the data were downsampled to provide $\sim20,000$ points each for constituent call and Citizens Connect App analysis. For Gibbs sampling, the data were downsampled to provide $\sim10,000$ points for each group. This still provides good coverage across the city. 
 \section{Methods}
 \subsection{Bayesian Gaussian Mixture Models}
 \begin{figure}
@@ -180,9 +180,9 @@ Hence, the complete data likelihood is
 \begin{align}
 L(\mathbf{X}) = \prod_{n=1}^N\prod_{k=1}^K \N(x_n| \mu_k, \Sigma_k)^{z_{nk}}.
 \end{align}
-The prior for $\pi$ is a Dirichlet distribution. For $\Sigma$, we use an Inverse-Wishart prior, which is conjugate to the multivariate normal distribution and ensures the selection of a positive-definite matrix. The hyper-parameters for the Inverse-Wishart prior are the scale matrix $S_0$ and the degrees of freedom $\nu_0$.  These priors can be set to be weakly informative, which is useful because it is difficult to assess \textit{a priori} what the components in the 311 data are. In addition, these priors allow closed forms of the conditional distributions to be used in Gibbs sampling to explore the posterior distribution. 
+The prior for $\pi$ is a Dirichlet distribution, which is appropriate for generating vectors that sum to 1. For $\Sigma$, we use an Inverse-Wishart prior, which is conjugate to the multivariate normal distribution and ensures the selection of a positive-definite matrix. The hyper-parameters for the Inverse-Wishart prior are the scale matrix $S_0$ and the degrees of freedom $\nu_0$.  These priors can be set to be weakly informative, which is useful because it is difficult to assess \textit{a priori} what the components in the 311 data are. In addition, while the posterior does not have a closed form, these priors allow closed forms of the conditional distributions to be used in Gibbs sampling to explore the posterior distribution. 
 
-To summarize, our model is described by the following \cite{Gelman, Jones}: 
+To summarize, our model is described by the following (as adopted from \cite{Gelman, Jones}): 
 \begin{align}
 \pi &\sim Dir(\alpha_0)\\
 \Sigma_k &\sim \mathrm{IW}(S_0, \nu_0)\\
@@ -192,12 +192,25 @@ x_n | \mathbf{Z}, \mu, \Sigma &\sim \prod_{k=1}^K \N(\mu_k, \Sigma_k)^{z_{nk}}
 \end{align}
 
 \subsection{MAP computation and model selection}
-Expectation maximization (EM) was used to compute point estimates, both maximum likelihood estimates (MLE) and maximum a posteriori estimates (MAP). EM is particularly appropriate for models with missing labels. The computation for MLE is initialized with the parameters $\mu$, $\pi$, $\Sigma$ using the means, mixing coefficients and covariance matrices for the components obtained from K-means clustering. The EM algorithm update equations for MLE is as follows (\cite{Bishop}): 
+Expectation maximization (EM) was used to compute point estimates via both maximum likelihood estimates (MLE) and maximum a posteriori estimates (MAP). EM is particularly appropriate for models with missing labels. The computation for MLE is initialized with the parameters $\mu$, $\pi$, $\Sigma$ using the means, mixing coefficients and covariance matrices for the components obtained from K-means clustering. The EM algorithm update equations for MLE is as follows \cite{Bishop}: 
+
 For the E-step, we calculate   
-\begin{equation}
-\gamma{(z_{nk})} = \frac{\pi_k \N(x_n| \mu_k, \Sigma_k)}{\Sigma_{j=1}^K \pi_j \N(x_n| \mu_j, \Sigma_j)},
+\begin{align}
+r_{nk} = \frac{\pi_k p\left(\mathbf{x}_n | \mu_k, \Sigma_k\right)}{\sum_{k'=1}^K \pi_{k'} p\left(\mathbf{x}_n | \mu_{k'}, \Sigma_{k'}\right)}
+\end{align}
+
+which expresses the probability that $z_{nk}=1$ given the observations. These probabilities are used as weights in the M-step to calculate new values of $\mu$, $\Sigma$, and $\pi$.:
+\begin{align}
+\pi_k &= \frac{r_k}{N},\;\; r_k =\sum_{n=1}^N r_{nk}\\
+\mu_k &=\frac{\sum_{n=1}^N r_{nk}\mathbf{x}_n}{r_k}\\
+\Sigma_k &= \frac{\sum_{n=1}^N r_{nk} \mathbf{x}_n\mathbf{x}_n^\top}{r_k} - \mu_k\mu_k^\top
+\end{align}
+The MLE values for the parameters $\mu$, $\pi$ and $\Sigma$ were used to initialize EM for computing MAP estimates of the parameter. While the E-step in the MAP computation is the same to that for MLE, the updates in the M-step incorporate the model priors (algorithm also from \cite{Bishop}). For example, the step to update $\pi$ is now 
+\begin{equation} 
+\pi_k = \frac{r_k + \alpha_k - 1}{N + \sum_{k=1}^K \alpha_k - K},
 \end{equation}
-which expresses the probability that $z_{nk}=1$ given the observations. These probabilities are used as weights in the M-step to calculate new values of $\mu$, $\Sigma$, and $\pi$. The MLE values for the parameters $\mu$, $\pi$ and $\Sigma$ were used to initialize EM for computing MAP estimates of the parameter. The E-step in the MAP computation is identical that of the MLE calculation, the updates in the M-step incorporates the model priors. For analysis, MAP estimates of the parameters are used, since MLE tend to overfit the data even with model selection. 
+which now depends on $a_k$, the hyperparameter for the Dirichlet prior for $\pi$. 
+For analysis of component characteristics, MAP estimates of the parameters are used, since MLE tend to overfit the data even with model selection. 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=60mm]{Call_bic}
@@ -207,7 +220,7 @@ which expresses the probability that $z_{nk}=1$ given the observations. These pr
 \vskip -0.2in
 \end{figure} 
 
-We perform model selection for the optimal number of components, $K$, using the Bayesian Information Criterion (BIC). The BIC score is an approximation for the evidence for the data $\log p(X | \mathcal{M})$ given the model $\mathcal{M}$, assuming the data distribution belongs to the exponential family \cite{Bishop}. Using maximum likelihood estimators, it is defined as 
+We performed model selection for the optimal number of components, $K$, using the Bayesian Information Criterion (BIC). The BIC score is an approximation for the evidence for the data $\log p(X | \mathcal{M})$ given the model $\mathcal{M}$, assuming the data distribution belongs to the exponential family \cite{Bishop}. Using maximum likelihood estimators, it is defined as 
 \begin{equation}
 \mathrm{BIC} = \log\mathcal{L}(\mathbf{X} | \theta^{MLE}, \mathcal{M}) - \frac{1}{2} \kappa_\mathcal{M}  \log(N),
 \end{equation}
@@ -217,18 +230,17 @@ where $\mathcal{L}$ is the likelihood of the data, $X$, given the model, $\mathc
 \end{align}
 where $X$ is the data, $\theta^{MAP}$ are parameters estimated from the posterior modes and $Z$ represents the latent cluster labels. 
 
-We computed both MLE and MAP estimates for $K=2$ to $K=6$ number of components. The BIC scores were then computed for the model given these estimates. From Figure \ref{fig:bic}, the BIC scores indicate that $K = 3$ is the optimal number of components for fitting our model using MAP estimates. Note also, from Figure \ref{fig:bic}, that MLE continues to favor models with larger numbers of components even after penalizing model complexity. Thus, MLE will tend to overfit the data.
+We computed both MLE and MAP estimates for different models with $K=2$ to $K=6$ number of components. The BIC scores were then computed for each model given these estimates. From Figure \ref{fig:bic}, the BIC scores indicate that $K = 3$ is the optimal number of components for fitting our model using MAP estimates. Note also, from Figure \ref{fig:bic}, that MLE continues to favor models with larger numbers of components even after penalizing model complexity. Thus, MLE will tend to overfit the data.
 
 \subsection{Simulated Annealing}
-As an alternative to K-means for initializing the EM computation for MLE, we consider likelihood maximization via simulated annealing.  Our state space consists of the mean vectors and covariance matrices for each clusters, and the objective function is the negative log-likelihood of observing the data given the present parameters. We minimize the objective function to find the maximum likelihood parameters.
+As an alternative to K-means for initializing the EM computation for MLE, we considered likelihood maximization via simulated annealing.  Our state space consists of the mean vectors and covariance matrices for each clusters, and the objective function is the negative log-likelihood of observing the data given the present parameters. We minimize the objective function to find the maximum likelihood parameters.
 
 One important implementation decision is how to jump to a new state. For a cluster with mean $\mu$ and covariance matrix $\Sigma$, a jump must propose a new mean and covariance. To find the proposed mean, we take the present estimate of the mean and add Gaussian noise distributed with a covariance matrix proportional to that of the cluster. In other words,
 $$\mu_\text{proposed} \sim \mathcal{N}(\mu, c\Sigma)$$
 where $c$ is tuned for optimal performance. For the cluster covariance matrix, we also add Gaussian noise with adjustable variance. However, since this noise may create an invalid covariance matrix, we must process the matrix to ensure that it remains symmetric and positive semi-definite by only modifying negative eigenvalues with some small positive $\epsilon$ and keeping the eigenvectors as unchanged as possible.
 
 \subsection{Gibbs sampling of the posterior distribution}
-We implement a Gibbs sampler for the posterior distribution, since the full conditionals can be explicitly computed for our model and sampling from these conditionals is easily performed. 
-The conditional distributions for our model are found in \cite{Gelman, Jones}. 
+We implement a Gibbs sampler for the posterior distribution, since the full conditionals can be explicitly computed for our model, facilitating sampling.  The conditional distributions for our model are found in \cite{Gelman, Jones}. 
 
  Each iteration of the Gibbs sampler consists of the following steps: 
  \begin{enumerate}
@@ -268,7 +280,7 @@ S_k = S_0 + \sum_{n=1}^N z_{nk}(x_n - \mu_k)(x_n - \mu_k)^\top
 
 \end{enumerate}
 
-A common issue arising from sampling from Gaussian mixture models is the so-called ``label-switching problem". In these mixture models, the component identities are unidentifiable due to the fact that the likelihood remains constant under permutations of the component labels. As a result, the posterior distribution for our model is highly multimodal, potentially leading to slow mixing of the Gibbs sampler. To address this issue, we follow the suggestion of Gelman et al. \cite{Gelman} and  resolve the labeling ambiguity of the components by defining a linear ordering on the mixture coefficients, $\pi_1 > \pi_2 > \pi_3$. We note that, in general, this type of identifiability constraint may not always break symmetry as desired, particularly if the fractions are similar in size \cite{Stephens}. However, since, judging from the point estimates, our clusters appear to be different in size, the ordering imposed on the mixture coefficients should be sufficient to collapse the multimodality of our posterior distribution.
+A common issue arising from sampling from Gaussian mixture models is the ``label-switching problem". In these mixture models, the components cannot be labeled unambiguously because the likelihood remains constant when component labels are permuted.  As a result, the posterior distribution for a Gaussian mixture model may be highly multimodal, potentially leading to slow mixing of the Gibbs sampler. To address this issue, we follow the suggestion of Gelman et al. \cite{Gelman} and  resolve the labeling ambiguity of the components by defining an ordering of the mixture coefficients, $\pi_1 > \pi_2 > \pi_3$. We note that, in general, this type of identifiability constraint may not always break symmetry as desired, particularly if the fractions are similar in size \cite{Stephens}. However, based on the point estimates obtained with EM and simulated annealing, our clusters appear to be different in size. Thus, imposing an order on the mixture coefficients should collapse the multimodality of our posterior distribution.
 
 We use the MAP estimate obtained from expectation maximization to initialize the values of $\pi$, $\mu$, and $\Sigma$ for the Gibbs sampler. We then set $\alpha_0 = (1,1,1)$, $m_0 = (1,1,1)$, $\nu_0 = 3$ (the number of components in the mixture model), and $S_0$ and $V_0$ to the identity matrices to maintain weakly informative priors.   
 
@@ -276,7 +288,7 @@ We use the MAP estimate obtained from expectation maximization to initialize the
 
 \subsection{Expectation maximization}
 
-Expectation maximization for MAP estimation (as well as for MLE) typically converged within about 30 iterations, based on examination of the log-likelihood plotted against iteration number. The hard clustering of the data based on MAP estimations of the mixture parameters for $K=3$ are shown in Fig. \ref{EMlabels}. For both Citizens Connect and call data, the identified Gaussian components are largely distinguished by differences in response time but not by geography. For each, the largest component (85 \%) has a mean response time of 4.5 days, the next largest (14\%) has a mean of 50 days, and the last lags substantially with a mean of 266 days (1\%). However, while the slow requests seem to be distributed throughout Boston for constituent calls, the slow requests are more concentrated in the downtown area for the Citizens Connect App, where request volume is high.
+Expectation maximization for MAP estimation (as well as for MLE) typically converged within about 30 iterations, based on examination of the log-likelihood plotted against iteration number. The hard clustering of the data based on MAP estimations of the mixture parameters for $K=3$ are shown in Fig. \ref{EMlabels}. For both Citizens Connect and call data, the identified Gaussian components are largely distinguished by differences in response time, but not by geography. For each, the largest component (85 \%) has a mean response time of 4.5 days, the next largest (14\%) has a mean of 50 days, and the last lags substantially with a mean of 266 days (1\%). However, while the slow requests seem to be distributed throughout Boston for constituent calls, the slow requests are more concentrated in the downtown area for the Citizens Connect App, where request volume is high.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=60mm, height=50mm]{3D_call}
@@ -333,20 +345,11 @@ $\small\left(\begin{array}{@{} ccc@{} } 50.1\pm1.3 & -71.0856\pm .0009  &42.3379
 \end{table*}
 
 
-The Gibbs sampler was run for a total of 500 iterations for both the constituent call and app data. Inspection of the trace plots suggest that convergence is achieved after 150 iterations (see Fig. \ref{trace} for sample trace plots), so a burn-in of 150 iterations is applied for calculation of the posterior means and uncertainties, listed in Table 1. (A test of a PyMC implementation of a Gaussian mixture model did not converge after 40000 iterations, so PyMC was deemed not optimal for this problem). 
+The Gibbs sampler was run for a total of 500 iterations for both the constituent call and app data. Inspection of the trace plots suggest that convergence was achieved after 150 iterations (see Fig. \ref{trace} for sample trace plots), so a burn-in of 150 iterations was applied for calculation of the posterior means and uncertainties, listed in Table 1. (A test of a PyMC implementation of a Gaussian mixture model did not converge after 40,000 iterations, so PyMC was deemed not optimal for this problem). 
 
 The clustering of the data based on posterior mean estimates obtained from the Gibbs sampler is shown in Figure \ref{gibbsclusters}. Compared to the MAP estimates made with EM, the Gibbs sampler characterizes the data with somewhat different components, and the results more closely resemble the MLE estimates made with EM. In particular, the Gibbs sampler results tend to assign more points to the cluster with the slowest response times and fewer to the cluster with the fastest. However, like the EM MAP estimates, the clusters with shorter response times account for larger fractions of the population, and the clusters are largely distinguished along the response time axis, with typically low covariance between response time and the location variables. 
 
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=45mm, height=42mm]{gibbscallclusterassignments}
-\includegraphics[width=45mm, height=42mm]{gibbsappclusterassignments}
-\caption{Gibbs component assignments}
-\label{gibbsclusters}
-\end{center}
-\end{figure}
-
-One possible reason for the difference between the EM MAP and Gibbs sampling results is that the posterior is multimodal. In general, determining the presence of multiple modes is challenging because traceplots may give the appearance of convergence when the sampler is actually only traveling around a single mode. Other MCMC techniques, such as parallel tempering or nested sampling, may be useful for exploring this issue further. 
+One possible reason for the difference between the EM MAP and Gibbs sampling results is that the posterior is multimodal. In general, determining the presence of multiple modes is challenging because convergence may appear to have been achieved when in fact the sampler is actually only traveling around a single mode. MCMC techniques optimized for sampling multimodal distributions, such as parallel tempering or nested sampling, may be useful for exploring this issue further. 
 
 \begin{figure}[h!]
 \begin{center}
@@ -357,8 +360,15 @@ One possible reason for the difference between the EM MAP and Gibbs sampling res
 \end{center}
 \end{figure}
 
-\subsection{Posterior predictive}
-To assess how well the model describes the data, we simulate data with the posterior predictive distribution. The posterior predictive distribution is generated by sampling from the posterior distribution obtained through Gibbs sampling, then using those parameter values to sample from the likelihood. The posterior predictive distributions is shown in Fig. \ref{pred}. The posterior predictive distribution suggests that the choice of a Gaussian mixture model reflects some of the need to describe the observations with tightly grouped components at lower response times and a more diffuse, lagging component with larger response times. The geographic difference between Citizens Connect and call data is also partially captured, with the posterior predictive distribution of the app data resulting in more compact components that are shifted to the northeast, which reflects the more typical geographic range of the app users.  However, a better model is needed to fit for the very longest response times. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=45mm, height=42mm]{gibbscallclusterassignments}
+\includegraphics[width=45mm, height=42mm]{gibbsappclusterassignments}
+\caption{Gibbs component assignments}
+\label{gibbsclusters}
+\end{center}
+\end{figure}
 
 \begin{figure}[h!]
 \begin{center}
@@ -369,21 +379,33 @@ To assess how well the model describes the data, we simulate data with the poste
 \end{center}
 \end{figure}
 
-\section{Conclusion}
-
-Since the components in the data are largely distinguished by differences in mean response times rather than showing strong separation in both response time and geography, it does not appear that specific regions of the city face disproportionately slow response times (although this could be true on regional scales smaller than what a 3-component model can probe). 
+\subsection{Posterior predictive}
+To assess how well the model describes the data, we simulated data with the posterior predictive distribution. The posterior predictive distribution is generated by sampling from the posterior distribution obtained through Gibbs sampling, then using those parameter values to sample from the likelihood. The posterior predictive distributions for the app and call data are shown in Fig. \ref{pred}. The posterior predictive distribution suggests that the choice of a Gaussian mixture model reflects some of the need to describe the observations with tightly grouped components at lower response times and a more diffuse, lagging component with larger response times. The geographic difference between Citizens Connect and call data is also partially captured, with the posterior predictive distribution of the app data resulting in more compact components that are shifted to the northeast, which reflects the more typical geographic range of the app users. Gaussians are a reasonable first approximation for capturing the shape of the region over which the requests originate, since the latitude and longitudes of the requests are spread fairly symmetrically. However, a better model is needed to fit for the very longest response times. Given that our models found that clustering tended to occur along the response time axis, an alternative modeling approach would be to model response time as one-dimensional problem. We generated posterior predictive distributions of single exponential and two-component exponential mixture models for the app data response times and found that the exponential mixture model was more consistent with the data compared to a single exponential (Fig. \ref{expo}). This exploration suggests that requests can be described robustly as distinct populations of slow and fast response times even under different modeling approaches. 
 
 \begin{figure}[h!]
 \begin{center}
+\includegraphics[width=45mm, height=42mm]{expomodel}
+\includegraphics[width=45mm, height=42mm]{mixture}
+\caption{Posterior predictive distributions for exponential and exponential mixture modeling of app response times only}
+\label{expo}
+\end{center}
+\end{figure}
+
+
+\section{Conclusion}
+While the estimated means and covariances of the components of the model show some sensitivity to choice of technique, the broad trend remains that the components in the data are largely distinguished by differences in mean response times rather than showing strong separation in both response time and geography. Based on this clustering pattern, it does not appear that specific regions of the city face disproportionately slow response times (although this could be true on regional scales smaller than what a 3-component model can probe). 
+
+\begin{figure}
+\begin{center} \label{profiles}
 \caption{Department breakdown of clusters}
 \subfigure[MAP Clustering (Call Data)]{\includegraphics[height=38mm]{profile_call}}{} %height=30mm
 \hskip1cm
 \subfigure[MAP Clustering (App Data)]{\includegraphics[height=38mm]{profile_app}}
-\end{center}\label{fig:conv}
+\end{center}
 \vskip -0.2in
 \end{figure} 
 
-To understand what characteristics distinguish the different clusters identified by the model, we retrieved the distribution of requests by department in each cluster. The department volume profiles shown in Fig. \ref{fig:conv} indicate that for a given request type (eg., call or app), different departments become more prominent for components associated with different response times. On the other hand, even though both Citizens Connect and constituent call data have components that are similarly oriented with respect to response time, their department volume profiles differ. This suggests that the characteristic lagging component observed for each group is not a straightforward matter of certain departments systematically taking longer.  Overall, our results suggest that while Citizens Connect and constituent calls tend toward different service needs and geographical origins, users of the app are served at least as efficiently as 311 callers.
+To determine what characteristics may distinguish the different clusters of requests identified by the model (using the MAP assignments), we retrieved the distribution of requests by department in each cluster. The department volume profiles shown in Fig. 9 indicate that for a given request type (eg., call or app), different departments become more prominent for components associated with different response times, which could suggest that the clusters with different response times are attributable to different service need profiles. On the other hand, even though both Citizens Connect and constituent call data have components that are similarly oriented with respect to response time, their department volume profiles differ. This suggests that the characteristic lagging component observed for each group is not a straightforward matter of certain departments systematically taking longer.  Overall, our results suggest that while Citizens Connect and constituent calls tend toward different service needs and geographical origins, users of the app are served at least as efficiently as 311 callers.
 
 
 \bibliographystyle{abbrv}
